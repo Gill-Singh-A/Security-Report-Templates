@@ -1,0 +1,36 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Social Engineering\\[2pt]Assessment Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Phishing / pretexting simulation}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Social engineering campaign results and analysis \\[6pt]
+    {\color{MedGray}\small\bfseries Campaign Type}   & \vspace{0cm} \small \fillme{e.g. Email phishing simulation} \\[6pt]
+    {\color{MedGray}\small\bfseries Target Population} & \vspace{0cm} \small \fillme{N employees across M departments} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Click Rate}      & \vspace{0cm} \small \fillme{n\%} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document identifies aggregate/department-level results only and
+  must not be used for individual disciplinary action; it must not be shared outside authorised
+  personnel responsible for the security awareness programme.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences on the campaign's authorisation and
+  ethical guardrails, e.g. "conducted with HR and Legal sign-off; no real credentials were
+  captured/stored beyond a hashed identifier for scoring."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}
