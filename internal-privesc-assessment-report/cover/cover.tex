@@ -1,0 +1,53 @@
+% ============================================================
+%  COVER PAGE
+% ============================================================
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west)
+    rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west)
+    rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west)
+    rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west)
+    rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{14cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{27}{31}\selectfont\bfseries Linux Privilege\\Escalation Assessment}\\[0.45cm]
+    {\fontsize{16}{20}\selectfont \reportfleet\ --- Shared Server Fleet}\\[0.3cm]
+    {\fontsize{10.5}{14}\selectfont\color{MedGray}\ttfamily \fillme{host1 \textbullet\ host2 \textbullet\ host3 \textbullet\ ...}}
+  \end{minipage}
+}
+
+\vspace{3.5cm}
+
+\hspace{2.5cm}\begin{minipage}{13cm}
+  \begin{tabular}{@{}p{4.6cm}p{8cm}}
+    {\color{MedGray}\small\bfseries Assessment Type}     & \vspace{0cm} \small Authenticated Internal Local Privilege Escalation \\[5pt]
+    {\color{MedGray}\small\bfseries Foothold Identity}   & \vspace{0cm} \small \fillme{e.g. unprivileged LDAP user, identical across all hosts} \\[5pt]
+    {\color{MedGray}\small\bfseries Assessment Period}   & \vspace{0cm} \small \fillme{start} -- \fillme{end} \\[5pt]
+    {\color{MedGray}\small\bfseries Report Date}         & \vspace{0cm} \small \reportdate \\[5pt]
+    {\color{MedGray}\small\bfseries Hosts in Scope}      & \vspace{0cm} \small \fillme{N hosts} \\[5pt]
+    {\color{MedGray}\small\bfseries Overall Risk Rating} & \vspace{0cm} \small \critical \\[5pt]
+    {\color{MedGray}\small\bfseries Classification}      & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+
+\vfill
+
+\hspace{2.5cm}\begin{minipage}{13cm}
+  \color{TextMain}
+  \small
+  \textbf{Distribution:} This document contains sensitive security information --- including any
+  live compromise evidence, credential-exposure locations, and indicators of compromise --- and
+  must not be shared outside the personnel responsible for remediating the identified findings.\\[6pt]
+  \textbf{Disclaimer:} Testing was conducted under written authorisation on infrastructure owned
+  and operated by the client. \fillme{State how much was live-exploited vs. only mapped
+  analytically, e.g. "live exploitation was limited to proof-of-concept confirmation on a subset
+  of hosts; other findings are mapped analytically and marked Not Tested."}
+\end{minipage}
+\vspace{1.6cm}
+\end{titlepage}

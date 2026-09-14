@@ -1,0 +1,23 @@
+\section{Statistics \& Risk Posture}\label{sec:stats}
+
+\subsection{Candidate Disposition}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Disposition} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Meaning} \\
+\midrule
+Confirmed & \fillme{n} & Exploited live \\
+\rowcolor{TableAlt}
+Version-in-range-unverified & \fillme{n} & Tool flagged it; not runtime-confirmed \\
+Needs-runtime-check & \fillme{n} & Requires a check not performed in this pass \\
+\rowcolor{TableAlt}
+Not-applicable & \fillme{n} & Rejected after verification (e.g. patched backport) \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Risk Overview by Category}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l l l X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Category} & \textcolor{white}{\bfseries Exploitability} & \textcolor{white}{\bfseries Impact} & \textcolor{white}{\bfseries Primary consequence} \\
+\midrule
+\fillme{e.g. SUID/polkit} & \fillme{Trivial} & \fillme{Critical} & \fillme{Local root via a public exploit} \\
+\rowcolor{TableAlt}
+\fillme{e.g. NFS misconfiguration} & \fillme{Trivial} & \fillme{High} & \fillme{Cross-host file tampering as root} \\
+\bottomrule\end{tabularx}\end{center}

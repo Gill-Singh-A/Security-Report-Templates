@@ -1,0 +1,35 @@
+% ============================================================
+\section{Per-Host Candidate Catalog}
+
+This section is the exhaustive record: every candidate vector enumerated per host, including
+those assessed \emph{Not-applicable} (retained with their reason, so nothing looks skipped).
+Severity is shown as \critical/\high/\medium/\low/\info\ in the leading column (C/H/M/L/I).
+
+\begin{notebox}
+\small \textbf{Verifier note.} \fillme{e.g. "Automated tooling matches many classic CVEs by
+version range alone; almost all were rejected as patched distribution backports after manual
+verification. Do not read a registry match as an exploitable bug without a runtime check."}
+\end{notebox}
+
+% ------------------------------------------------------------
+% Copy this block once per host.
+% ------------------------------------------------------------
+\subsection{\fillme{hostname} --- \fillme{Distro/version} (\fillme{n} candidates: \fillme{n}C / \fillme{n}H / \fillme{n}M / \fillme{n}L / \fillme{n}I)}
+
+\begin{center}
+\scriptsize\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}c l Y l Y@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Sev} & \textcolor{white}{\bfseries Category} & \textcolor{white}{\bfseries Title} & \textcolor{white}{\bfseries CVE} & \textcolor{white}{\bfseries Applicability} \\
+\midrule
+C & \fillme{category} & \fillme{Title (F-01)} & \fillme{CVE-YYYY-NNNNN} & \fillme{Confirmed} \\
+\rowcolor{TableAlt}
+H & \fillme{category} & \fillme{Title} & \fillme{---} & \fillme{Version-in-range-unverified} \\
+M & \fillme{category} & \fillme{Title} & \fillme{---} & \fillme{Needs-runtime-check} \\
+\rowcolor{TableAlt}
+L & \fillme{category} & \fillme{Title} & \fillme{CVE-YYYY-NNNNN} & \fillme{Not-applicable (patched)} \\
+I & \fillme{category} & \fillme{Title} & \fillme{---} & \fillme{Not-applicable} \\
+\bottomrule
+\end{tabularx}
+\end{center}

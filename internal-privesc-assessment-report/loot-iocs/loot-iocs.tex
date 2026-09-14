@@ -1,0 +1,40 @@
+\section{Loot \& Files Worth Checking}
+Beyond the privilege-escalation vectors, note anything found that enables lateral movement or is
+itself an exposure. Report by \emph{path and reason}, not by content.
+
+\subsection{Credentials \& Passwords}
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}l Y Y@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Host} & \textcolor{white}{\bfseries Path} & \textcolor{white}{\bfseries Why / next action} \\
+\midrule
+\host{\fillme{host}} & \fillme{path/to/config} & \fillme{e.g. hardcoded secret -- reuse-check against related systems (F-NN)} \\
+\rowcolor{TableAlt}
+\host{\fillme{host}} & \fillme{path} & \fillme{why} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Private Keys \& Certificates}
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}l Y Y@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Host} & \textcolor{white}{\bfseries Path} & \textcolor{white}{\bfseries Why} \\
+\midrule
+\fillme{all} & \fpath{\textasciitilde/.ssh/} & \fillme{Reusable keys -- pivot risk if identity is shared across hosts} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Notable Services \& Configs to Review}
+\begin{itemize}
+  \item \host{\fillme{host}}: \fillme{service/config worth a closer look}
+\end{itemize}
+
+\begin{notebox}
+\small\textbf{Scope note.} \fillme{State any exclusions -- e.g. files inside the assessing user's
+own home directory, or artifacts placed by the assessment team itself, are excluded from this
+catalog.}
+\end{notebox}

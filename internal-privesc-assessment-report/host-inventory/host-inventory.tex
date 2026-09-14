@@ -1,0 +1,64 @@
+\section{Host Inventory \& Facts Sheet}
+
+\subsection{Fleet at a Glance}
+% <EDIT> One paragraph framing the spread of the fleet (age, patch level, OS diversity) --
+% uneven patching across a fleet is itself often a finding worth stating up front.
+\fillme{One paragraph summarising the fleet: how many hosts, what OS/age spread, and what that
+spread implies about risk.}
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}l l Y l l Y@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Host} &
+\textcolor{white}{\bfseries Distro} &
+\textcolor{white}{\bfseries Kernel (build date)} &
+\textcolor{white}{\bfseries sudo} &
+\textcolor{white}{\bfseries gcc} &
+\textcolor{white}{\bfseries Notable} \\
+\midrule
+\host{\fillme{host1}} & \fillme{distro} & \fillme{kernel (date)} & \fillme{ver} & \fillme{ver} & \fillme{notable config} \\
+\rowcolor{TableAlt}
+\host{\fillme{host2}} & \fillme{distro} & \fillme{kernel (date)} & \fillme{ver} & \fillme{ver} & \fillme{notable config} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{The Foothold Identity}
+Every host was assessed from the same account. Its lack of privilege is what makes the results
+significant --- nothing below required any special group or sudo right.
+
+\begin{center}
+\begin{tabularx}{0.92\linewidth}{@{}l Y@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Attribute} & \textcolor{white}{\bfseries Value (identical on all hosts)} \\
+\midrule
+User              & \fillme{username} \\
+\rowcolor{TableAlt}
+Privileged groups & \fillme{None (no sudo, wheel, admin, docker, lxd, disk, adm, shadow, staff)} \\
+\texttt{sudo -l}  & \fillme{No output on any host -- no cached credential, no sudoers entry} \\
+\rowcolor{TableAlt}
+Container?        & \fillme{No -- direct host access on every machine} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{infobox}{Why one identity across the whole fleet matters}
+\small
+\fillme{Explain the shared-identity / shared-storage implication: a credential or key harvested on
+one host is likely to work on the others, so the fleet behaves as one trust domain rather than
+independently defended machines.}
+\end{infobox}
+
+\subsection{Risk Tiers}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l Y@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Tier} & \textcolor{white}{\bfseries Characterisation} \\
+\midrule
+\textbf{Legacy --- immediate emergency} & \fillme{Old/EOL hosts, trivially rootable with public exploits.} \\
+\rowcolor{TableAlt}
+\textbf{Modern --- exposed on the margins} & \fillme{Well-patched hosts still exposed to a small number of recent CVEs or structural weaknesses.} \\
+\bottomrule\end{tabularx}\end{center}

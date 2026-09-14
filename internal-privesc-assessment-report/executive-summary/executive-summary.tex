@@ -1,0 +1,46 @@
+\section{Executive Summary}
+\subsection{Overview}
+% <EDIT> What was tested and the headline outcome.
+An authenticated internal assessment was conducted across \fillme{N} representative hosts in
+\reportfleet, using the same low-privilege foothold identity on every machine, to determine what a
+compromised (or malicious) unprivileged account could achieve. \fillme{One sentence on the overall
+outcome, e.g. "root was obtained on multiple hosts within minutes using public, unweaponised
+exploits."}
+
+\begin{criticalbox}
+\textbf{Result --- \fillme{one-line verdict}.}\\[6pt]
+Headline conclusions:
+\begin{itemize}
+  \item \fillme{Headline finding 1, e.g. "root confirmed on N hosts via public LPE exploits"}
+  \item \fillme{Headline finding 2, e.g. "shared identity + shared NFS home directories mean a
+        credential harvested on one host works on all of them"}
+  \item \fillme{Headline finding 3}
+\end{itemize}
+\end{criticalbox}
+
+\subsection{Overall Risk Rating}
+\begin{center}\begin{tikzpicture}
+  \node[fill=AccentRed, text=white, font=\Large\bfseries\sffamily, minimum width=9cm, minimum height=1.2cm, rounded corners=4pt]{CRITICAL};
+\end{tikzpicture}\end{center}
+
+\subsection{Findings by Severity}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Severity} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Meaning} \\
+\midrule
+\critical & \fillme{n} & \confirmed\ root on at least one host \\
+\rowcolor{TableAlt}
+\high & \fillme{n} & \fillme{Meaning for this engagement} \\
+\medium & \fillme{n} & \fillme{Meaning for this engagement} \\
+\rowcolor{TableAlt}
+\low\ / \info & \fillme{n} & Hygiene / defence-in-depth gaps \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Confirmed vs. Mapped}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Status} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Meaning} \\
+\midrule
+\confirmed & \fillme{n} & Exploited live during the engagement \\
+\rowcolor{TableAlt}
+\mapped & \fillme{n} & Identified and assessed applicable, not exploited (client-approved scope limit) \\
+\bottomrule\end{tabularx}\end{center}

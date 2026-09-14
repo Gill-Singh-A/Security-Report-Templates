@@ -1,0 +1,62 @@
+% ============================================================
+%  One folder per headline finding: findings/F<NN>-<slug>/finding.tex
+%  Copy this folder to add a new finding, and add its \input to main.tex.
+% ============================================================
+\subsection{F-01 --- \fillme{Short, specific finding title, e.g. "PwnKit: pkexec Local Privilege Escalation (CVE-2021-4034)"}}
+\label{sec:f01}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.4cm} Y p{3.2cm} Y@{}}
+\toprule
+\rowcolor{TableHead}
+\multicolumn{4}{l}{\textcolor{white}{\bfseries\sffamily Finding Metadata}} \\
+\midrule
+\textbf{ID}            & F-01                       & \textbf{Severity}       & \critical \\
+\rowcolor{TableAlt}
+\textbf{Affected Host} & \host{\fillme{hostname}}   & \textbf{Status}         & \confirmed \\
+\textbf{CVE / CVSS}    & \cve{\fillme{CVE-YYYY-NNNNN}} / \fillme{n.n} & \textbf{Exploitability} & \fillme{Trivial} \\
+\rowcolor{TableAlt}
+\textbf{Category}      & \fillme{e.g. SUID / polkit} & \textbf{Applicability}  & \fillme{Confirmed-applicable} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Description}
+\fillme{Describe the vulnerable component, the precondition that makes it exploitable on this
+host (version, config), and why it is one of the most reliable local-root primitives of its kind
+if applicable.}
+
+\subsubsection{Technical Details}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}l Y@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Evidence} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+\fillme{e.g. SUID binary} & \fillme{-rwsr-xr-x 1 root root ... /usr/bin/pkexec} \\
+\rowcolor{TableAlt}
+\fillme{e.g. Version} & \fillme{package version, release date, pre-fix} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{codebox}[\fillme{Confirmed via <tool/module name>}]
+\fillme{illustrative command / expected output only}
+\end{codebox}
+
+\paragraph{Public exploits.} \fillme{Name the public PoC(s)/module used, e.g. an Exploit-DB ID or
+a named GitHub PoC repository -- no need to embed exploit source in the report.}
+
+\subsubsection{Impact}
+\begin{criticalbox}
+\fillme{What full root/administrative access on this host enables, and how it chains with other
+findings (e.g. shared storage, shared credentials) to affect the rest of the fleet.}
+\end{criticalbox}
+
+\begin{mitigationbox}
+\begin{itemize}
+  \item \textbf{Patch immediately:} \fillme{package/version to upgrade to.}
+  \item \textbf{Interim mitigation} if patching must wait: \fillme{e.g. remove the SUID bit.}
+  \item \textbf{Strategic:} \fillme{e.g. plan migration off an end-of-life OS.}
+\end{itemize}
+\end{mitigationbox}

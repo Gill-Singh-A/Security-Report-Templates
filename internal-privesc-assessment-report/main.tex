@@ -1,0 +1,56 @@
+% ============================================================
+%  Internal Network / Privilege-Escalation Assessment Report — template
+%  Modular LaTeX project: each report element lives in its own
+%  subdirectory.
+%
+%  Build:  pdflatex main.tex  (run twice for the table of contents)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+\input{preamble/preamble.tex}
+
+\begin{document}
+\sffamily
+
+\input{cover/cover.tex}
+
+\newpage
+\thispagestyle{fancy}
+\renewcommand{\contentsname}{Table of Contents}
+{\hypersetup{linkcolor=PrimaryDark}\tableofcontents}
+
+\newpage
+\input{executive-summary/executive-summary.tex}
+
+\newpage
+\input{scope-methodology/scope-methodology.tex}
+
+\newpage
+\input{host-inventory/host-inventory.tex}
+
+\newpage
+\input{risk-posture/risk-posture.tex}
+
+\newpage
+\input{systemic-root-causes/systemic-root-causes.tex}
+
+\newpage
+\input{exploitation-playbooks/exploitation-playbooks.tex}
+
+% ---- Headline findings: one \input per finding ----
+\newpage
+\input{findings/findings-catalog.tex}
+\input{findings/F01-example-finding/finding.tex}
+
+\newpage
+\input{host-catalog/host-catalog.tex}
+
+\newpage
+\input{loot-iocs/loot-iocs.tex}
+
+\newpage
+\input{recommendations/recommendations.tex}
+
+\newpage
+\input{appendix/appendix.tex}
+
+\end{document}

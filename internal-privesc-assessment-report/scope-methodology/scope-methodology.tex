@@ -1,0 +1,41 @@
+\section{Scope \& Methodology}\label{sec:method}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+Fleet           & \reportfleet \\
+\rowcolor{TableAlt}
+Hosts in scope  & \fillme{N hosts -- list or reference the host inventory} \\
+Foothold        & \fillme{e.g. one shared unprivileged LDAP identity, no elevated group membership} \\
+\rowcolor{TableAlt}
+Assessment type & Authenticated internal local-privilege-escalation review \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Approach}
+\begin{enumerate}
+  \item \textbf{Enumeration.} \fillme{e.g. an automated enumeration tool (linPEAS or similar) was
+        run from the unprivileged foothold on each host.}
+  \item \textbf{Candidate triage.} Every candidate vector the tool surfaced was individually
+        assessed for applicability against the host's actual patch level and configuration,
+        rather than trusted at face value.
+  \item \textbf{Adversarial verification.} \fillme{Describe how candidates were confirmed or
+        rejected -- e.g. cross-checked against distro changelogs / backport status before being
+        marked Confirmed, Version-in-range-unverified, or Not-applicable.}
+  \item \textbf{Selective live exploitation.} \fillme{Describe how many / which hosts had live
+        PoC exploitation, vs. analytical mapping only, and why.}
+\end{enumerate}
+
+\begin{notebox}
+\small\textbf{Verifier note.} \fillme{e.g. "Automated tooling flags many CVEs by version range
+alone; most were rejected as patched distribution backports after manual verification. Do not
+read a registry match as an exploitable bug without a runtime check."}
+\end{notebox}
+
+\subsection{Status Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Status} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\confirmed & Exploited live against the target host during the engagement. \\
+\rowcolor{TableAlt}
+\mapped    & Assessed applicable but not exploited (scope limit / client request). \\
+\bottomrule\end{tabularx}\end{center}
