@@ -1,0 +1,25 @@
+\section{Appendix A --- Credential \& Secret Locations}
+Per the rules of engagement, only \emph{locations} should be listed here --- never secret values.
+All listed locations must be rotated.
+\begin{center}\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{6.2cm} X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Location} & \textcolor{white}{\bfseries Contents} \\
+\midrule
+\fillme{path/to/config.properties} & \fillme{e.g. Cleartext DB user/password + internal DB host IP} \\
+\rowcolor{TableAlt}
+\fillme{Hardcoded keys in ...} & \fillme{Signing keys / SMTP credentials (where present)} \\
+\bottomrule\end{tabularx}\end{center}
+
+\section{Appendix B --- Web-Root Exposed-File Inventory}
+\begin{center}\begin{tabularx}{\linewidth}{@{}X r l@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Type} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Risk} \\
+\midrule
+\fillme{e.g. Dated source backups} & \fillme{n} & \fillme{Source / old-vulnerable-logic disclosure} \\
+\rowcolor{TableAlt}
+\fillme{e.g. .log files (excl. WEB-INF)} & \fillme{n} & \fillme{Info leak} \\
+\bottomrule\end{tabularx}\end{center}
+
+\vfill\begin{center}\begin{tikzpicture}
+  \node[fill=PrimaryDark, text=white, font=\small\sffamily, minimum width=14cm, minimum height=1.1cm, rounded corners=3pt, align=center]
+  {This report is \textbf{CONFIDENTIAL} --- Restricted to authorised personnel only\\
+   \textcolor{MedGray}{\reportsystem\ --- Security Assessment --- \reportdate}};
+\end{tikzpicture}\end{center}

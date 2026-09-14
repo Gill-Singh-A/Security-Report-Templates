@@ -1,0 +1,18 @@
+\section{Systemic Root Causes}\label{sec:roots}
+% <EDIT> The findings usually collapse into a small number of architectural defects.
+% Document each one as R1, R2, ... and cross-reference it from the relevant findings.
+The findings collapse into a small number of architectural defects. Fixing these classes ---
+rather than individual instances --- is the only path to materially reducing risk.
+
+\subsection{R1 --- \fillme{e.g. Raw-String SQL Data-Access Layer}}
+\fillme{Describe the systemic pattern: what shared component or convention causes many individual
+findings, and why fixing one instance does not fix the class.}
+\begin{codebox}[\fillme{Typical call site -- e.g. request parameter concatenated into raw SQL}]
+\fillme{// minimal illustrative code snippet showing the pattern, no real secrets/paths}
+\end{codebox}
+
+\subsection{R2 --- \fillme{e.g. No Central Authentication / Authorisation}}
+\fillme{Describe the second systemic root cause.}
+
+\subsection{R3 --- \fillme{e.g. Cleartext Secrets \& Web-Root Source/Backup Exposure}}
+\fillme{Describe the third systemic root cause.}

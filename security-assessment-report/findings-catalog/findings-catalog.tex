@@ -1,0 +1,57 @@
+\newcommand{\sgCrit}{\colorbox{AccentRed}{\textcolor{white}{\sffamily\bfseries\scriptsize~CRITICAL~}}}
+\newcommand{\sgHigh}{\colorbox{AccentOrange}{\textcolor{white}{\sffamily\bfseries\scriptsize~HIGH~}}}
+\newcommand{\sgMed}{\colorbox{AccentYellow}{\textcolor{black}{\sffamily\bfseries\scriptsize~MEDIUM~}}}
+\newcommand{\sgLow}{\colorbox{AccentGreen}{\textcolor{white}{\sffamily\bfseries\scriptsize~LOW~}}}
+\newcommand{\sgInfo}{\colorbox{MedGray}{\textcolor{white}{\sffamily\bfseries\scriptsize~INFO~}}}
+\newcommand{\fblabel}[1]{\textcolor{PrimaryMid}{\small\bfseries\sffamily #1}}
+\newcommand{\fbsep}{\par\vspace{4pt}{\color{BorderGray}\hrule height 0.4pt}\vspace{8pt}}
+\section{Full Findings Catalogue}\label{sec:catalog}
+All findings for this module are catalogued below, grouped by vulnerability class and
+severity-sorted within each class. Each finding carries a unique ID (\texttt{F-NNN}), a metadata
+table, and the complete evidence, source-to-sink path, and impact.
+
+\subsection*{Class index}
+\begin{center}\begin{tabularx}{\linewidth}{@{}X r r r r r r@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Class} & \textcolor{white}{\bfseries Crit} & \textcolor{white}{\bfseries High} & \textcolor{white}{\bfseries Med} & \textcolor{white}{\bfseries Low} & \textcolor{white}{\bfseries Info} & \textcolor{white}{\bfseries Total} \\\midrule
+\fillme{Class 1} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} \\
+\fillme{Class 2} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} & \fillme{n} \\
+\bottomrule\end{tabularx}\end{center}
+
+% ------------------------------------------------------------
+% Copy the block below once per finding. Group findings under a
+% \subsection per vulnerability class, as shown.
+% ------------------------------------------------------------
+\subsection{\fillme{Vulnerability Class} \textnormal{\small(\fillme{n} findings: Critical\,\fillme{n})}}
+\noindent\textbf{F-001.\quad \fillme{Short, specific finding title}}\par\nopagebreak\smallskip
+\begin{tabular}{@{}>{\bfseries}l >{\raggedright\arraybackslash}p{4.7cm} >{\bfseries}l >{\raggedright\arraybackslash}p{4.7cm}@{}}
+\toprule
+Severity & \sgCrit & Class & {\footnotesize \fillme{Vulnerability Class}} \\
+\addlinespace[1pt]
+Auth & \fillme{Authenticated / None} & Verdict & \fillme{Confirmed} \\
+\addlinespace[1pt]
+Module & {\footnotesize\ttfamily \fillme{module-name}} & Instances & \fillme{\textasciitilde n} \\
+\addlinespace[1pt]
+Location & \fillme{path/to/File.ext:NN} & Endpoint & \fillme{METHOD /path} \\
+\bottomrule
+\end{tabular}\par\smallskip
+\fblabel{Evidence}\par{\footnotesize\ttfamily \fillme{minimal illustrative code excerpt -- no real secrets/paths}}\par\smallskip
+\fblabel{Source$\rightarrow$Sink}\par{\small \fillme{One line: where the untrusted input enters, and the exact call that turns it into a vulnerability.}}\par\smallskip
+\fblabel{Impact}\par{\small \fillme{One or two sentences: what an attacker can concretely do.}}\par
+\fbsep
+
+\noindent\textbf{F-002.\quad \fillme{Second finding title in the same class}}\par\nopagebreak\smallskip
+\begin{tabular}{@{}>{\bfseries}l >{\raggedright\arraybackslash}p{4.7cm} >{\bfseries}l >{\raggedright\arraybackslash}p{4.7cm}@{}}
+\toprule
+Severity & \sgHigh & Class & {\footnotesize \fillme{Vulnerability Class}} \\
+\addlinespace[1pt]
+Auth & \fillme{Authenticated / None} & Verdict & \fillme{Confirmed} \\
+\addlinespace[1pt]
+Module & {\footnotesize\ttfamily \fillme{module-name}} & Instances & \fillme{\textasciitilde n} \\
+\addlinespace[1pt]
+Location & \fillme{path/to/File.ext:NN} & Endpoint & \fillme{METHOD /path} \\
+\bottomrule
+\end{tabular}\par\smallskip
+\fblabel{Evidence}\par{\footnotesize\ttfamily \fillme{minimal illustrative code excerpt}}\par\smallskip
+\fblabel{Source$\rightarrow$Sink}\par{\small \fillme{...}}\par\smallskip
+\fblabel{Impact}\par{\small \fillme{...}}\par
+\fbsep

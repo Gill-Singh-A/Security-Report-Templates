@@ -1,0 +1,53 @@
+\section{Scope \& Methodology}\label{sec:method}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+Module          & \fillme{name / repo} --- \reportsystem \\
+\rowcolor{TableAlt}
+Server / stack  & \fillme{e.g. Apache Tomcat 8.5; Spring Boot REST; Oracle} \\
+Codebase size   & \fillme{e.g. N web-apps (compiled .class + application.properties + pom.xml)} \\
+\rowcolor{TableAlt}
+Web context     & \fillme{e.g. /<api>} \\
+Assessment type & \fillme{e.g. Read-only, white-box (source) static analysis --- discovery only, no code modified} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Approach}
+% <EDIT> Describe the actual methodology used for this assessment.
+\begin{enumerate}
+  \item \textbf{Static surface map.} \fillme{Deterministic inventories of every sink class (SQL
+        execution sites, XSS sinks, upload/file sinks, command/dynamic execution, secrets, exposed
+        source/backup files) to quantify prevalence and partition the work.}
+  \item \textbf{Systematic review.} \fillme{Describe how the codebase was divided and reviewed --
+        e.g. per-module review, or a multi-pass finder + adversarial-verifier process.}
+  \item \textbf{Synthesis.} Findings were de-duplicated by pattern, ranked by severity and
+        exploitability, and compiled into this report.
+\end{enumerate}
+
+\subsection{Severity \& Verdict Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Level} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\critical & Unauthenticated RCE, unauthenticated SQLi, or authentication bypass. \\
+\rowcolor{TableAlt}
+\high     & Authenticated RCE/SQLi, stored XSS, IDOR exposing PII/financial data, upload-to-RCE requiring a session. \\
+\medium   & Reflected XSS, CSRF, missing session hardening, sensitive data exposure. \\
+\rowcolor{TableAlt}
+\low\ / Info & Hygiene and defence-in-depth gaps. \\
+\bottomrule\end{tabularx}\end{center}
+\noindent\textbf{Verification verdicts:} \emph{Confirmed} (evidence holds), \emph{NeedsReview} (could not be fully confirmed statically; treat as probable).
+
+\newpage
+\subsection{Verification Outcome}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Verdict} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Note} \\
+\midrule
+Confirmed   & \fillme{n} & Evidence re-validated against the cited code \\
+\rowcolor{TableAlt}
+NeedsReview & \fillme{n} & Retained, flagged; validate dynamically \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Endpoint / Reference Convention}
+\fillme{Explain any convention used to reference endpoints or source locations throughout this
+report, e.g. "Endpoints follow /<api>/<path-from-webroot>. Pervasive patterns are collapsed into a
+single finding with an approximate instance count plus representative file:line examples."}

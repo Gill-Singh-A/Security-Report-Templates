@@ -1,0 +1,37 @@
+% COVER
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{30}{34}\selectfont\bfseries Security\\[2pt]Assessment Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reportsystem}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Source-code / white-box vulnerability audit}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small \fillme{e.g. Static (white-box) source-code security assessment} \\[6pt]
+    {\color{MedGray}\small\bfseries Subject System}  & \vspace{0cm} \small \reportsystem \\[6pt]
+    {\color{MedGray}\small\bfseries Stack}           & \vspace{0cm} \small \fillme{e.g. Apache Tomcat; Spring Boot REST; PostgreSQL} \\[6pt]
+    {\color{MedGray}\small\bfseries Codebase}        & \vspace{0cm} \small \fillme{e.g. N web-apps; mostly compiled bytecode + Maven descriptors} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Findings}        & \vspace{0cm} \small \fillme{N (n Critical, n High, n Medium, n Low)} \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Risk}    & \vspace{0cm} \small \colorbox{AccentRed}{\textcolor{white}{\sffamily\bfseries\small\ CRITICAL\ }} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive security information and must not be shared outside authorised personnel responsible for remediation.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences describing the analysis method, e.g.
+  "a read-only, white-box static analysis of the <module> source tree. No application code or
+  configuration was modified."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}

@@ -1,0 +1,34 @@
+\section{Statistics \& Risk Posture}\label{sec:stats}
+\subsection{Authentication Requirement}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Auth required} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Interpretation} \\
+\midrule
+None (unauthenticated) & \fillme{n} & Exploitable by anyone who can reach the endpoint \\
+\rowcolor{TableAlt}
+Authenticated & \fillme{n} & Requires a valid (any-role) session \\
+Unknown & \fillme{n} & Reachability depends on deployment / inconsistent guards \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Sink Prevalence (module inventories)}
+These deterministic counts measure how widespread each weakness class is across the codebase.
+They are prevalence measures, not de-duplicated finding counts.
+\begin{center}\begin{tabularx}{\linewidth}{@{}X >{\raggedright\arraybackslash}p{3.0cm}@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Inventory} & \textcolor{white}{\bfseries Count} \\
+\midrule
+\fillme{e.g. Files calling a raw SQL-execution helper} & \fillme{n files} \\
+\rowcolor{TableAlt}
+\fillme{e.g. Reflected-XSS sink lines} & \fillme{n lines} \\
+\fillme{e.g. File/upload sink files} & \fillme{n files} \\
+\rowcolor{TableAlt}
+\fillme{e.g. Credential-bearing config files} & \fillme{n} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Risk Overview by Class}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l l l X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Class} & \textcolor{white}{\bfseries Exploitability} & \textcolor{white}{\bfseries Impact} & \textcolor{white}{\bfseries Primary consequence} \\
+\midrule
+\fillme{e.g. SQL Injection} & \fillme{Trivial} & \fillme{Critical} & \fillme{Full DB read/write; auth bypass via login-path SQLi} \\
+\rowcolor{TableAlt}
+\fillme{e.g. Broken Access Control} & \fillme{Trivial} & \fillme{High} & \fillme{Mass IDOR; modify other users' records} \\
+\bottomrule\end{tabularx}\end{center}
