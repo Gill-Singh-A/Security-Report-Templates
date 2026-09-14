@@ -1,0 +1,44 @@
+\section{\fillme{Short, specific title, e.g. "Stored XSS in Profile Bio Field via Unsanitised HTML"}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X p{3.4cm} X@{}}
+\toprule
+\rowcolor{TableHead}
+\multicolumn{4}{l}{\textcolor{white}{\bfseries\sffamily Submission Metadata}} \\
+\midrule
+\textbf{Severity}      & \high & \textbf{CVSS Score}   & \fillme{7.4 (High)} \\
+\rowcolor{TableAlt}
+\textbf{Weakness}      & \fillme{CWE-79: Cross-Site Scripting} & \textbf{Affected URL} & \fillme{https://example.com/profile/edit} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Summary}
+\fillme{One or two sentences summarising the vulnerability and its impact -- this is what a
+triager reads first, so make it count.}
+
+\subsection{Steps to Reproduce}
+\begin{enumerate}
+  \item \fillme{Step 1 -- e.g. log in as a standard user and navigate to Profile > Edit.}
+  \item \fillme{Step 2 -- e.g. set the "Bio" field to the payload below and save.}
+  \item \fillme{Step 3 -- e.g. view the profile as any other user; observe the script executes.}
+\end{enumerate}
+
+\begin{codebox}[Payload used]
+\fillme{<script>alert(document.domain)</script>  -- or your actual illustrative PoC payload}
+\end{codebox}
+
+\subsection{Impact}
+\begin{highbox}
+\fillme{What an attacker can do with this in practice -- e.g. "any user who views the attacker's
+profile executes attacker-controlled JavaScript in their own session, enabling session-token
+theft or unauthorized actions performed as the victim."}
+\end{highbox}
+
+\subsection{Suggested Fix}
+\fillme{e.g. HTML-encode the Bio field on output, or run it through an allow-list HTML sanitiser
+before storage/render.}
+
+\subsection{Supporting Material}
+\fillme{Reference attached screenshots/video (filenames), if any. Do not paste real victim data
+or other users' information here.}
