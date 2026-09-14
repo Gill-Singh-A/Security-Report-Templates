@@ -1,0 +1,30 @@
+\section{Executive Summary}
+\subsection{Overview}
+A Software Bill of Materials (SBOM) was generated for \reporttarget\ and its dependency tree
+was assessed for known vulnerabilities, license risk, and maintenance/supply-chain health.
+
+\fillme{One or two sentences on the overall outcome, e.g. "the application depends on N
+end-of-life packages with known RCE CVEs, and M packages have had no maintainer activity in over
+two years."}
+
+\begin{criticalbox}
+\textbf{Result --- \fillme{one-line verdict}.}\\[6pt]
+Headline conclusions:
+\begin{itemize}
+  \item \fillme{Headline finding 1}
+  \item \fillme{Headline finding 2}
+\end{itemize}
+\end{criticalbox}
+
+\subsection{Findings by Severity}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Severity} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Meaning} \\
+\midrule
+\critical & \fillme{n} & \fillme{e.g. known unauthenticated RCE in a directly-reachable dependency} \\
+\rowcolor{TableAlt}
+\high & \fillme{n} & \fillme{e.g. known high-severity CVE, no patch available} \\
+\medium & \fillme{n} & \fillme{e.g. end-of-life package, no known CVE yet} \\
+\rowcolor{TableAlt}
+\low & \fillme{n} & \fillme{e.g. license risk, low download/maintainer activity} \\
+\bottomrule\end{tabularx}\end{center}

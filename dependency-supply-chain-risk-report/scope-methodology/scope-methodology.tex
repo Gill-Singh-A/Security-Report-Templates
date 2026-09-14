@@ -1,0 +1,37 @@
+\section{Scope \& Methodology}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+Application/repo & \fillme{name} \\
+\rowcolor{TableAlt}
+Ecosystems covered & \fillme{e.g. npm, PyPI, Maven, Go modules} \\
+SBOM format        & \fillme{e.g. CycloneDX / SPDX} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Approach}
+\begin{enumerate}
+  \item \textbf{SBOM generation.} Generate a full dependency tree (direct + transitive) from the
+        project's lockfiles/build manifests.
+  \item \textbf{Vulnerability matching.} Match each component/version against public vulnerability
+        databases (NVD, GHSA, OSV) for known CVEs.
+  \item \textbf{License review.} Flag components under licenses incompatible with the
+        organisation's distribution model (e.g. copyleft licenses in a proprietary product).
+  \item \textbf{Health/maintenance review.} Flag components that are unmaintained, deprecated, or
+        have a history of supply-chain incidents (e.g. a prior compromised release).
+  \item \textbf{Reachability analysis.} Where feasible, determine whether the vulnerable code path
+        is actually reachable/exercised by the application, to separate "present" from
+        "exploitable."
+\end{enumerate}
+
+\subsection{Severity Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Level} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\critical & Known, reachable, unauthenticated RCE or equivalent in a used dependency. \\
+\rowcolor{TableAlt}
+\high     & Known high-severity CVE with no patch, or a patch not yet applied. \\
+\medium   & End-of-life component with no current CVE, or an unreachable known CVE. \\
+\rowcolor{TableAlt}
+\low\ / Info & License risk, low maintenance activity, or hygiene gaps. \\
+\bottomrule\end{tabularx}\end{center}
