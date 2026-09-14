@@ -16,6 +16,7 @@
 *.nav
 *.snm
 *.vrb
+*.listing
 
 # Compiled output (kept out of version control; build locally with make/build.sh/pdflatex)
 *.pdf
