@@ -1,0 +1,32 @@
+\section{Scope \& Methodology}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+Benchmark  & \fillme{e.g. CIS Ubuntu Linux 22.04 LTS Benchmark v2.0.0, Level 1 -- Server} \\
+\rowcolor{TableAlt}
+Hosts/roles in scope & \fillme{e.g. 12 hosts across 3 roles (web, app, db)} \\
+Sampling  & \fillme{e.g. all hosts scanned; N hosts per role manually deep-dived} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Approach}
+\begin{enumerate}
+  \item \textbf{Automated scan.} Run the benchmark's automated scanner (\texttt{CIS-CAT}, or an
+        equivalent \texttt{OpenSCAP}/\texttt{ansible-lockdown} profile) against every in-scope host.
+  \item \textbf{Manual verification.} Every failed control on a sampled subset is manually
+        verified on the live host, since automated scanners can mis-detect drift or custom
+        exceptions.
+  \item \textbf{Risk contextualisation.} Failing controls are re-prioritised by actual risk (e.g.
+        a failing control on an internet-facing host outranks the same failure on an isolated
+        internal host).
+\end{enumerate}
+
+\subsection{Result Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Result} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\pass & Control is correctly configured on all sampled hosts. \\
+\rowcolor{TableAlt}
+\fail & Control fails on one or more sampled hosts. \\
+\notapplicable & Control does not apply to this environment (with justification on file). \\
+\bottomrule\end{tabularx}\end{center}

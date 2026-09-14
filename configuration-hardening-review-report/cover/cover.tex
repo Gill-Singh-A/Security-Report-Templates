@@ -1,0 +1,35 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Configuration\\[2pt]Hardening Review}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Baseline benchmark compliance review}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Configuration hardening / baseline benchmark review \\[6pt]
+    {\color{MedGray}\small\bfseries Benchmark}       & \vspace{0cm} \small \fillme{e.g. CIS Ubuntu Linux 22.04 LTS Benchmark v2.0.0} \\[6pt]
+    {\color{MedGray}\small\bfseries Hosts Assessed}  & \vspace{0cm} \small \fillme{N} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Pass Rate} & \vspace{0cm} \small \fillme{n\%} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive security information and must not be
+  shared outside authorised personnel responsible for remediation.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences, e.g. "an automated benchmark scan
+  followed by manual verification of every failed control, against a representative sample of
+  hosts per OS/role."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}
