@@ -1,0 +1,32 @@
+\section{Executive Summary}
+\subsection{Overview}
+An on-site wireless security assessment was conducted at \reporttarget\ to evaluate the security
+of deployed Wi-Fi networks against rogue-AP, credential-capture, and encryption-bypass attacks.
+
+\fillme{One or two sentences on the outcome, e.g. "the corporate SSID uses WPA2-Enterprise with
+a vulnerable EAP method, allowing credential capture via a rogue access point impersonating the
+corporate network."}
+
+\begin{criticalbox}
+\textbf{Result --- \fillme{one-line verdict}.}\\[6pt]
+Headline conclusions:
+\begin{itemize}
+  \item \fillme{Headline finding 1}
+  \item \fillme{Headline finding 2}
+\end{itemize}
+\end{criticalbox}
+
+\subsection{Overall Risk Rating}
+\begin{center}\begin{tikzpicture}
+  \node[fill=AccentRed, text=white, font=\Large\bfseries\sffamily, minimum width=9cm, minimum height=1.2cm, rounded corners=4pt]{CRITICAL};
+\end{tikzpicture}\end{center}
+
+\subsection{Networks Assessed}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries SSID} & \textcolor{white}{\bfseries Security} & \textcolor{white}{\bfseries Overall Result} \\
+\midrule
+\fillme{Corp-WiFi} & \fillme{WPA2-Enterprise} & \fillme{Credential capture achieved} \\
+\rowcolor{TableAlt}
+\fillme{Guest-WiFi} & \fillme{WPA2-PSK} & \fillme{No compromise; properly isolated} \\
+\bottomrule\end{tabularx}\end{center}

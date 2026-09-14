@@ -1,0 +1,39 @@
+\section{Scope \& Methodology}
+\subsection{In-Scope Networks \& Sites}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Site} & \textcolor{white}{\bfseries Networks} \\
+\midrule
+\fillme{Building/floor} & \fillme{SSIDs in scope} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Rules of Engagement}
+\begin{itemize}
+  \item Testing window: \fillme{start date} -- \fillme{end date}, on-site.
+  \item Deauthentication / jamming attacks: \fillme{in / out of scope}.
+  \item Rogue AP impersonation: \fillme{in / out of scope}.
+\end{itemize}
+
+\subsection{Methodology}
+\begin{enumerate}
+  \item \textbf{RF survey.} Passive scanning to enumerate all in-range access points, SSIDs, and
+        encryption types (\texttt{airodump-ng}/\texttt{Kismet}).
+  \item \textbf{Encryption assessment.} Handshake/PMKID capture and offline cracking attempts
+        against WPA2-PSK networks; EAP-method identification for WPA2/3-Enterprise networks.
+  \item \textbf{Rogue AP / Evil Twin.} Deploying a cloned SSID to test client auto-connect
+        behaviour and credential capture (\texttt{hostapd-wpe} or similar).
+  \item \textbf{Client isolation \& segmentation testing.} Verifying guest networks cannot reach
+        internal/corporate segments.
+  \item \textbf{Captive portal testing.} Bypass attempts against any captive-portal authentication.
+\end{enumerate}
+
+\subsection{Severity Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Level} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\critical & Corporate credential capture or direct access to internal network from wireless. \\
+\rowcolor{TableAlt}
+\high     & Crackable encryption, weak EAP method, or captive-portal bypass. \\
+\medium   & Missing client isolation, weak guest-network segmentation. \\
+\rowcolor{TableAlt}
+\low\ / Info & Hygiene gaps (e.g. SSID broadcasting internal naming conventions). \\
+\bottomrule\end{tabularx}\end{center}
