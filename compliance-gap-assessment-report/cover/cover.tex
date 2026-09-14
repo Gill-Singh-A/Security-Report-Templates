@@ -1,0 +1,35 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Compliance Gap\\[2pt]Assessment Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Control-by-control gap analysis}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Compliance / regulatory framework gap assessment \\[6pt]
+    {\color{MedGray}\small\bfseries Framework}       & \vspace{0cm} \small \fillme{e.g. PCI-DSS v4.0} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Controls Assessed} & \vspace{0cm} \small \fillme{N} \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Compliance} & \vspace{0cm} \small \partiallycompliant \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive compliance information and must not be
+  shared outside authorised personnel responsible for remediation.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences on assessment method, e.g. "a
+  control-by-control gap assessment against <framework>, based on document review, configuration
+  review, and personnel interviews. This is a readiness assessment, not a certification audit."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}
