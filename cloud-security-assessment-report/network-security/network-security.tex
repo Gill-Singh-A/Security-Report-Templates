@@ -1,0 +1,27 @@
+\section{Network Security}
+\fillme{One paragraph summarising network exposure -- VPC/VNet layout, public subnets, and
+notable ingress rules.}
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Metric} & \textcolor{white}{\bfseries Value} & \textcolor{white}{\bfseries Notes} \\
+\midrule
+Security groups allowing 0.0.0.0/0 on sensitive ports & \fillme{n} & \fillme{e.g. 22, 3389, 3306} \\
+\rowcolor{TableAlt}
+Publicly reachable databases & \fillme{n} & \fillme{note} \\
+Load balancers without TLS enforced & \fillme{n} & \fillme{note} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{F-02 --- \fillme{e.g. "Database Security Group Permits Inbound Access from 0.0.0.0/0"}}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X p{3.4cm} X@{}}
+\toprule\rowcolor{TableHead}
+\multicolumn{4}{l}{\textcolor{white}{\bfseries\sffamily Finding Metadata}} \\
+\midrule
+\textbf{ID} & F-02 & \textbf{Severity} & \high \\
+\rowcolor{TableAlt}
+\textbf{Resource} & \fillme{security group / firewall rule ID} & \textbf{Category} & \fillme{Network exposure} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\fillme{Description, evidence, impact, and remediation.}

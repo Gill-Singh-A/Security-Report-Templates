@@ -1,0 +1,51 @@
+\section{Executive Summary}
+\subsection{Overview}
+A configuration security review was conducted against \reporttarget. \fillme{One sentence on the
+review method, e.g. "the review covered identity and access management, network exposure, data
+protection, and logging/monitoring configuration across all in-scope accounts."}
+
+The assessment identified \textbf{\fillme{N} distinct findings}. \fillme{One or two sentences
+summarising the overall posture and the worst realistic outcome, e.g. "several S3 buckets are
+publicly readable and a number of IAM roles grant unscoped administrator access to CI/CD
+pipelines."}
+
+\begin{criticalbox}
+\textbf{Result --- \fillme{one-line verdict}.}\\[6pt]
+Headline conclusions:
+\begin{itemize}
+  \item \fillme{Headline finding 1}
+  \item \fillme{Headline finding 2}
+  \item \fillme{Headline finding 3}
+\end{itemize}
+\end{criticalbox}
+
+\subsection{Overall Risk Rating}
+\begin{center}\begin{tikzpicture}
+  \node[fill=AccentRed, text=white, font=\Large\bfseries\sffamily, minimum width=9cm, minimum height=1.2cm, rounded corners=4pt]{CRITICAL};
+\end{tikzpicture}\end{center}
+
+\subsection{Findings by Severity}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Severity} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Meaning} \\
+\midrule
+\critical & \fillme{n} & \fillme{e.g. publicly exposed data store or unauthenticated admin access} \\
+\rowcolor{TableAlt}
+\high & \fillme{n} & \fillme{e.g. overly-broad IAM policy, unencrypted data store} \\
+\medium & \fillme{n} & \fillme{e.g. missing MFA enforcement, permissive security group} \\
+\rowcolor{TableAlt}
+\low & \fillme{n} & \fillme{e.g. logging/retention gaps} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Findings by Domain}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Domain} & \textcolor{white}{\bfseries Count} & \textcolor{white}{\bfseries Severities} \\
+\midrule
+Identity \& Access Management & \fillme{n} & \fillme{n Critical, n High} \\
+\rowcolor{TableAlt}
+Network Security & \fillme{n} & \fillme{n High, n Medium} \\
+Data Protection & \fillme{n} & \fillme{n Critical} \\
+\rowcolor{TableAlt}
+Logging \& Monitoring & \fillme{n} & \fillme{n Medium, n Low} \\
+\bottomrule\end{tabularx}\end{center}

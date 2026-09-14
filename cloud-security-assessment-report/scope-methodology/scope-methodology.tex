@@ -1,0 +1,42 @@
+\section{Scope \& Methodology}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+Provider        & \fillme{AWS / Azure / GCP} \\
+\rowcolor{TableAlt}
+Accounts/Projects & \fillme{list of account/subscription/project identifiers} \\
+Access used     & \fillme{Read-only role/service-account name} \\
+\rowcolor{TableAlt}
+Assessment type & Configuration review against the cloud provider's control plane (API/CLI/console); no in-guest access \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Benchmark / Framework Used}
+\fillme{Name the baseline used, e.g. "CIS Amazon Web Services Foundations Benchmark v3.0" or
+"CIS Microsoft Azure Foundations Benchmark", plus any provider-specific Well-Architected /
+Security Hub findings folded in.}
+
+\subsection{Approach}
+\begin{enumerate}
+  \item \textbf{Inventory.} Enumerate all accounts/subscriptions/projects, regions, and resource
+        types in scope.
+  \item \textbf{Automated baseline scan.} Run the chosen benchmark (via \texttt{Prowler}/\texttt{ScoutSuite}/
+        native tooling) to get a first-pass control-by-control result set.
+  \item \textbf{Manual verification.} Each automated finding is manually verified against the
+        live configuration (false positives from stale benchmarks are common); manual review adds
+        checks the benchmark does not cover (e.g. cross-account trust relationships).
+  \item \textbf{Risk contextualisation.} Findings are re-prioritised based on actual exposure
+        (public reachability, data sensitivity, blast radius) rather than benchmark severity alone.
+\end{enumerate}
+
+\subsection{Severity Definitions}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Level} & \textcolor{white}{\bfseries Definition} \\
+\midrule
+\critical & Public/unauthenticated exposure of sensitive data, or trivial full-account takeover. \\
+\rowcolor{TableAlt}
+\high     & Overly-broad privilege grants, unencrypted sensitive data, exploitable misconfiguration. \\
+\medium   & Missing hardening controls (MFA, key rotation) with a plausible attack path. \\
+\rowcolor{TableAlt}
+\low\ / Info & Hygiene and best-practice gaps. \\
+\bottomrule\end{tabularx}\end{center}

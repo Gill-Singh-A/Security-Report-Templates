@@ -1,0 +1,36 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Cloud Security\\[2pt]Configuration Assessment}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily \aws}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Cloud security configuration review (IAM, network, data, logging) \\[6pt]
+    {\color{MedGray}\small\bfseries Cloud Provider}   & \vspace{0cm} \small \fillme{AWS / Azure / GCP} \\[6pt]
+    {\color{MedGray}\small\bfseries Accounts/Projects in Scope} & \vspace{0cm} \small \fillme{list account/subscription/project IDs} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Findings}        & \vspace{0cm} \small \fillme{N (n Critical, n High, n Medium, n Low)} \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Risk}    & \vspace{0cm} \small \colorbox{AccentRed}{\textcolor{white}{\sffamily\bfseries\small\ CRITICAL\ }} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive security information and must not be
+  shared outside authorised personnel responsible for remediation.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences, e.g. "a read-only configuration review
+  via the cloud provider's API/CLI and console, using a credential scoped to read-only IAM
+  permissions. No resources were created, modified, or deleted."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}

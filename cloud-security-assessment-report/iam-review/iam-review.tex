@@ -1,0 +1,30 @@
+\section{Identity \& Access Management}
+\fillme{One paragraph summarising the IAM posture -- root/owner account usage, MFA coverage,
+key-rotation practice, and the general shape of role/policy design (least-privilege vs. broad
+wildcard grants).}
+
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Metric} & \textcolor{white}{\bfseries Value} & \textcolor{white}{\bfseries Notes} \\
+\midrule
+Users without MFA & \fillme{n / total} & \fillme{note} \\
+\rowcolor{TableAlt}
+Access keys older than 90 days & \fillme{n} & \fillme{note} \\
+Roles/policies with wildcard (\texttt{*:*}) actions & \fillme{n} & \fillme{note} \\
+\rowcolor{TableAlt}
+Unused roles/service accounts (90+ days) & \fillme{n} & \fillme{note} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{F-01 --- \fillme{e.g. "IAM Role Trust Policy Allows Cross-Account Assumption from Any Account"}}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X p{3.4cm} X@{}}
+\toprule\rowcolor{TableHead}
+\multicolumn{4}{l}{\textcolor{white}{\bfseries\sffamily Finding Metadata}} \\
+\midrule
+\textbf{ID} & F-01 & \textbf{Severity} & \critical \\
+\rowcolor{TableAlt}
+\textbf{Resource} & \fillme{role/policy ARN or resource ID} & \textbf{Category} & \fillme{IAM misconfiguration} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\fillme{Description, evidence (the offending policy JSON excerpt), impact, and remediation.}
