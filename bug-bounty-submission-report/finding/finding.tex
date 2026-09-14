@@ -8,7 +8,7 @@
 \midrule
 \textbf{Severity}      & \high & \textbf{CVSS Score}   & \fillme{7.4 (High)} \\
 \rowcolor{TableAlt}
-\textbf{Weakness}      & \fillme{CWE-79: Cross-Site Scripting} & \textbf{Affected URL} & \fillme{https://example.com/profile/edit} \\
+\textbf{Weakness}      & \fillme{CWE-79: Cross-Site Scripting} & \textbf{Affected URL} & \textbf{\textcolor{AccentRed}{\ttfamily\seqsplit{[FILL: https://example.com/profile/edit]}}} \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -25,7 +25,7 @@ triager reads first, so make it count.}
 \end{enumerate}
 
 \begin{codebox}[Payload used]
-\fillme{<script>alert(document.domain)</script>  -- or your actual illustrative PoC payload}
+<script>alert(document.domain)</script>  -- illustrative only, replace with your actual PoC payload
 \end{codebox}
 
 \subsection{Impact}
