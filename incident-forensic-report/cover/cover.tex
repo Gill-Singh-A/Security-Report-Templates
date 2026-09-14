@@ -1,0 +1,40 @@
+% COVER
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Active Compromise\\[2pt]Forensic Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reportsystem}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Incident investigation \& artifact analysis}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Incident / active-compromise forensic assessment \\[6pt]
+    {\color{MedGray}\small\bfseries Subject System}  & \vspace{0cm} \small \reportsystem \\[6pt]
+    {\color{MedGray}\small\bfseries Trigger}         & \vspace{0cm} \small \fillme{e.g. Artifacts discovered during an unrelated static assessment} \\[6pt]
+    {\color{MedGray}\small\bfseries Investigation Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Artifacts Found} & \vspace{0cm} \small \fillme{N (e.g. 1 webshell, 1 backdoor, 2 staged files)} \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Risk}    & \vspace{0cm} \small \colorbox{AccentRed}{\textcolor{white}{\sffamily\bfseries\small\ CRITICAL\ }} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive incident details and must not be shared
+  outside authorised personnel responsible for containment and remediation.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences describing how the artifacts were
+  found and analysed, e.g. "a read-only filesystem review of the deployed web application; no
+  artifact was executed or modified, and no live network traffic was captured."}\\[6pt]
+  \textbf{Warning:} This report describes a live, exploitable compromise. Treat every credential
+  and access path referenced here as burned until rotated, and coordinate takedown/rotation with
+  the incident-response process before wide circulation.
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}

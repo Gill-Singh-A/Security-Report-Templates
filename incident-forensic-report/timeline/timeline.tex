@@ -1,0 +1,55 @@
+\section{Artifact Timeline \& Interpretation}
+\label{sec:timeline}
+
+% <EDIT> One paragraph framing the timeline: is this a burst intrusion, or a long-standing
+% unremediated foothold? What does the spread of dates suggest?
+\fillme{One paragraph interpreting the overall shape of the timeline below.}
+
+\subsection{Timeline}
+
+\begin{center}
+\begin{tikzpicture}[
+  mstep/.style={
+    rectangle, rounded corners=4pt,
+    fill=PrimaryMid, text=white,
+    font=\small\sffamily\bfseries,
+    minimum width=13.2cm, minimum height=0.76cm,
+    align=center
+  },
+  mredstep/.style={
+    rectangle, rounded corners=4pt,
+    fill=AccentRed, text=white,
+    font=\small\sffamily\bfseries,
+    minimum width=13.2cm, minimum height=0.76cm,
+    align=center
+  },
+  marrow/.style={->, thick, color=PrimaryMid, line width=1.2pt}
+]
+\node[mredstep] (t1) {\fillme{YYYY-MM-DD} \quad \fillme{Artifact / event 1}};
+\node[mstep,    below=0.42cm of t1] (t2) {\fillme{YYYY-MM-DD} \quad \fillme{Artifact / event 2}};
+\node[mstep,    below=0.42cm of t2] (t3) {\fillme{YYYY-MM-DD} \quad \fillme{Artifact / event 3}};
+\node[mredstep, below=0.42cm of t3] (t4) {\fillme{Ongoing} \quad \fillme{Delivery channel remains open}};
+\draw[marrow] (t1)--(t2); \draw[marrow] (t2)--(t3); \draw[marrow] (t3)--(t4);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Detailed Timeline}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries Date} &
+\textcolor{white}{\bfseries Artifact / Phase} &
+\textcolor{white}{\bfseries Evidence} \\
+\midrule
+\fillme{YYYY-MM-DD} & \fillme{Phase name} & \fillme{One-line evidence description} \\
+\rowcolor{TableAlt}
+\fillme{YYYY-MM-DD} & \fillme{Phase name} & \fillme{One-line evidence description} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{infobox}{Interpretation}
+\fillme{One paragraph stating the high-confidence conclusions and, separately, what remains
+uncertain given the evidence available (e.g. mtimes bound presence, not first abuse).}
+\end{infobox}

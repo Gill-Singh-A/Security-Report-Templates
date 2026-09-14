@@ -1,0 +1,28 @@
+\section{Scope \& Methodology}\label{sec:method}
+\subsection{Subject \& Scope}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Item} & \textcolor{white}{\bfseries Detail} \\
+\midrule
+System          & \reportsystem \\
+\rowcolor{TableAlt}
+Investigation type & \fillme{e.g. Read-only filesystem/artifact review -- discovery only, nothing executed or modified} \\
+Data sources    & \fillme{e.g. Deployed application source tree; filesystem mtimes; no live network capture} \\
+\bottomrule\end{tabularx}\end{center}
+
+\subsection{Approach}
+\begin{enumerate}
+  \item \textbf{Artifact discovery.} \fillme{How suspicious files/backdoors were located -- e.g.
+        pattern search for exec/eval sinks, unusual file extensions or permissions, filename
+        anomalies.}
+  \item \textbf{Characterisation.} \fillme{How each artifact was analysed to determine what it
+        does, without executing it.}
+  \item \textbf{Timeline reconstruction.} \fillme{How dates/ordering were established -- e.g.
+        filesystem mtimes -- and the confidence caveats that come with that method.}
+  \item \textbf{Impact \& IOC synthesis.} Findings were compiled into a consolidated inventory,
+        a timeline, and a set of indicators of compromise for detection/hunting.
+\end{enumerate}
+
+\begin{notebox}
+\small\textbf{Caveat.} \fillme{Note any limitation, e.g. "filesystem mtimes are
+attacker-influenceable and bound presence, not necessarily the moment of first abuse."}
+\end{notebox}

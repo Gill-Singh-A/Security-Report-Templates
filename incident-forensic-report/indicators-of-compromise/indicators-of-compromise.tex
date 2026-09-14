@@ -1,0 +1,37 @@
+\section{Indicators of Compromise (IOCs)}
+\label{sec:ioc}
+
+The following indicators allow detection of this compromise on the live host and across other
+instances of the application.
+
+\subsection{On-Disk Indicators}
+\begin{itemize}
+  \item \textbf{Known artifacts:} \fillme{path/to/artifact} and any file matching
+        \fillme{describe the general pattern, e.g. "an unexpected .jsp/.php under an
+        upload/attachment directory"}.
+  \item \textbf{Filename tokens:} \fillme{list suspicious tokens, e.g. dot-named files, double
+        extensions, null bytes, oddly-cased extensions}.
+  \item \textbf{Content markers:} \fillme{list suspicious code markers, e.g. Runtime.exec,
+        ProcessBuilder, base64 decode-and-eval patterns}.
+\end{itemize}
+
+\begin{codebox}[Read-only on-disk detection sweep]
+\fillme{# illustrative grep/find command for hunting the same pattern elsewhere, generic only}
+\end{codebox}
+
+\subsection{Network / HTTP Indicators}
+\fillme{Note whether access logs were available. If not available in this source tree, say so and
+list what to pull and search for.}
+\begin{itemize}
+  \item \fillme{e.g. GET requests to the known artifact path, especially with suspicious parameters}
+  \item \fillme{e.g. POST/multipart uploads with executable-looking filenames}
+  \item \fillme{e.g. outbound connections initiated by the application process}
+\end{itemize}
+
+\newpage
+\subsection{Host Indicators}
+\begin{itemize}
+  \item \fillme{e.g. unexpected database logons sourced from the application host}
+  \item \fillme{e.g. modifications to authorized\_keys, cron, or service startup scripts}
+  \item \fillme{e.g. new or modified files anywhere under the web root, especially world-writable ones}
+\end{itemize}

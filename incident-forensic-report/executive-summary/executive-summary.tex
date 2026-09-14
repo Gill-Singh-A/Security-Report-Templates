@@ -1,0 +1,38 @@
+\section{Executive Summary}
+\subsection{Overview}
+% <EDIT> What was found, how, and the headline risk.
+During \fillme{describe the trigger, e.g. "a routine static security assessment"} of \reportsystem,
+\fillme{N} artifacts consistent with an active or historical compromise were discovered:
+\fillme{one clause per artifact type, e.g. "an unauthenticated command-execution webshell, a
+hardcoded authentication backdoor, and staged non-application files in an upload directory"}.
+
+\begin{criticalbox}
+\textbf{Result --- \fillme{one-line verdict, e.g. "a live, functional webshell exists on the
+production host today"}.}\\[6pt]
+Headline conclusions:
+\begin{itemize}
+  \item \fillme{Headline finding 1, e.g. "a working unauthenticated command shell exists on the live system"}
+  \item \fillme{Headline finding 2}
+  \item \fillme{Headline finding 3}
+\end{itemize}
+\end{criticalbox}
+
+\subsection{Scope Note}
+\fillme{State clearly what is and is not covered -- e.g. any artifact intentionally introduced by
+the assessment team itself is excluded from the inventory below; access logs outside the reviewed
+tree were not available.}
+
+\subsection{Overall Risk Rating}
+\begin{center}\begin{tikzpicture}
+  \node[fill=AccentRed, text=white, font=\Large\bfseries\sffamily, minimum width=9cm, minimum height=1.2cm, rounded corners=4pt]{CRITICAL};
+\end{tikzpicture}\end{center}
+
+\subsection{Artifacts at a Glance}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries ID} & \textcolor{white}{\bfseries Severity} & \textcolor{white}{\bfseries Artifact} \\
+\midrule
+IC-01 & \critical & \fillme{e.g. Unauthenticated command-execution webshell} \\
+\rowcolor{TableAlt}
+IC-02 & \high & \fillme{e.g. Hardcoded authentication backdoor} \\
+\bottomrule\end{tabularx}\end{center}

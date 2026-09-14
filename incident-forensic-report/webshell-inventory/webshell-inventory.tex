@@ -1,0 +1,57 @@
+\section{Webshell \& Artifact Inventory}
+\label{sec:inventory}
+
+This section catalogues every malicious / suspicious artifact found, with representative code and
+a description of what each does. Sizes are in bytes; times are filesystem mtimes (local).
+
+% ------------------------------------------------------------
+% Copy this block once per artifact.
+% ------------------------------------------------------------
+\subsection{Finding IC-01 --- \fillme{Short title, e.g. "OS Command-Execution Webshell"}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.2cm} X@{}}
+\toprule
+\rowcolor{TableHead}
+\multicolumn{2}{l}{\textcolor{white}{\bfseries\sffamily Finding Metadata}} \\
+\midrule
+\textbf{ID / Severity} & IC-01 \quad\textbar\quad \critical \\
+\rowcolor{TableAlt}
+\textbf{File} & \fillme{relative/path/to/artifact} \quad(\fillme{size bytes}, mtime \fillme{YYYY-MM-DD}) \\
+\textbf{Category} & \fillme{e.g. OS command-execution webshell} \\
+\rowcolor{TableAlt}
+\textbf{Authentication} & \fillme{None} \\
+\textbf{Endpoint} & \fillme{http://host/path?param=value} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent\fillme{One paragraph describing the artifact in plain language: what interface it
+presents, what it does with attacker input, and why there is no auth check.}
+
+\begin{codebox}[\fillme{path/to/artifact -- description of behaviour}]
+\fillme{// minimal illustrative reconstruction of the artifact's logic, not the verbatim file}
+\end{codebox}
+
+\begin{criticalbox}
+\fillme{One paragraph: how long this has plausibly been present, and the single worst thing an
+attacker can do with it right now.}
+\end{criticalbox}
+
+\subsection{Consolidated Artifact List}
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{5.6cm} >{\raggedright\arraybackslash}p{2.0cm} l X@{}}
+\toprule
+\rowcolor{TableHead}
+\textcolor{white}{\bfseries File} &
+\textcolor{white}{\bfseries mtime} &
+\textcolor{white}{\bfseries ID} &
+\textcolor{white}{\bfseries Behaviour} \\
+\midrule
+\fillme{path} & \fillme{date} & IC-01 & \fillme{one-line behaviour summary} \\
+\rowcolor{TableAlt}
+\fillme{path} & \fillme{date} & IC-02 & \fillme{one-line behaviour summary} \\
+\bottomrule
+\end{tabularx}
+\end{center}

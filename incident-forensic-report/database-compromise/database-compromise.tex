@@ -1,0 +1,44 @@
+\section{Database / Data Exposure}
+\label{sec:db}
+
+\subsection{Finding IC-03 --- \fillme{e.g. "Cleartext Database Credentials Reachable via RCE"}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X p{3.4cm} X@{}}
+\toprule
+\rowcolor{TableHead}
+\multicolumn{4}{l}{\textcolor{white}{\bfseries\sffamily Finding Metadata}} \\
+\midrule
+\textbf{ID} & IC-03 & \textbf{Severity} & \critical \\
+\rowcolor{TableAlt}
+\textbf{Category} & \fillme{Credential exposure / data at risk} & \textbf{Status} & \fillme{Reachable now} \\
+\textbf{Backends} & \fillme{e.g. PostgreSQL, Redis} & \textbf{Action} & Rotate all credentials \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Evidence}
+\begin{enumerate}
+  \item \textbf{Credentials are stored in cleartext.} \fillme{Describe the config file / location
+        and how many accounts/hosts are affected. Do not include the actual secret values.
+        \emph{Values are withheld from this report per the rules of engagement.}}
+  \item \textbf{Reachability.} \fillme{Explain how the credential file becomes readable given the
+        other artifacts in this report (e.g. via the webshell in IC-01).}
+  \item \textbf{Capability.} \fillme{State what an actor can do with OS access plus these
+        credentials.}
+\end{enumerate}
+
+\begin{criticalbox}
+\fillme{One paragraph: because a live foothold and reachable cleartext credentials coexist, every
+credential reachable from this host must be treated as burned. State the rotation scope and the
+follow-up review needed (unauthorised accounts, unexpected logons, schema changes).}
+\end{criticalbox}
+
+\subsubsection{Data at Risk}
+\fillme{Name the system this supports and list, at a category level (not specific records), what
+kinds of sensitive data are exposed if this path is exploited -- e.g. personal records, financial
+data, credentials for other systems.}
+\begin{itemize}
+  \item \fillme{Data category 1}
+  \item \fillme{Data category 2}
+\end{itemize}
