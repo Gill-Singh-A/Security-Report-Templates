@@ -1,0 +1,27 @@
+\section{Key Metrics}
+\noindent\fillme{One short paragraph in plain, non-technical language summarising the headline
+number for this period, e.g. "we ran 4 assessments this quarter and closed 78\% of prior-quarter
+findings on schedule."}
+
+\begin{center}
+\begin{tikzpicture}[
+  tile/.style={rectangle, rounded corners=4pt, fill=PrimaryMid, text=white, minimum width=4.1cm, minimum height=2.4cm, align=center}
+]
+\node[tile] (a) at (0,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N}} \\[2pt] {\small\sffamily \fillme{Open Critical/High findings}}\end{tabular}};
+\node[tile, fill=AccentGreen] (b) at (4.5,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N\%}} \\[2pt] {\small\sffamily \fillme{Findings remediated on time}}\end{tabular}};
+\node[tile, fill=AccentOrange] (c) at (9,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N}} \\[2pt] {\small\sffamily \fillme{Assessments completed this period}}\end{tabular}};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.6cm}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l r r X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Metric} & \textcolor{white}{\bfseries This Period} & \textcolor{white}{\bfseries Prior Period} & \textcolor{white}{\bfseries Trend} \\
+\midrule
+Open Critical findings & \fillme{n} & \fillme{n} & \fillme{$\uparrow$/$\downarrow$/$\to$} \\
+\rowcolor{TableAlt}
+Mean time to remediate (Critical) & \fillme{n days} & \fillme{n days} & \fillme{$\uparrow$/$\downarrow$/$\to$} \\
+Assessments completed & \fillme{n} & \fillme{n} & \fillme{$\uparrow$/$\downarrow$/$\to$} \\
+\rowcolor{TableAlt}
+Security awareness training completion & \fillme{n\%} & \fillme{n\%} & \fillme{$\uparrow$/$\downarrow$/$\to$} \\
+\bottomrule\end{tabularx}\end{center}

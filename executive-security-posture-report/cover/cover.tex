@@ -1,0 +1,33 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries FOR BOARD / EXECUTIVE DISTRIBUTION}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Executive Security\\[2pt]Posture Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Reporting period: \reportperiod}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Periodic executive/board security posture summary \\[6pt]
+    {\color{MedGray}\small\bfseries Prepared For}    & \vspace{0cm} \small \fillme{Board of Directors / Audit Committee} \\[6pt]
+    {\color{MedGray}\small\bfseries Report Date}     & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Overall Trend}   & \vspace{0cm} \small \fillme{Improving / Stable / Worsening} \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Board Distribution Only} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Purpose:} This report summarises the organisation's security posture for
+  \reportperiod\ in non-technical terms, for governance and resourcing decisions. Detailed
+  technical findings are tracked separately in the underlying engagement reports referenced
+  herein.
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}

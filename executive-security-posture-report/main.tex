@@ -1,0 +1,21 @@
+% ============================================================
+%  Executive Security Posture Report — template
+%  Short, board-level report. Modular LaTeX project.
+%
+%  Build:  pdflatex main.tex  (run twice for the table of contents)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+\input{preamble/preamble.tex}
+
+\begin{document}
+\sffamily
+\input{cover/cover.tex}
+\newpage
+\input{key-metrics/key-metrics.tex}
+\newpage
+\input{risk-trend/risk-trend.tex}
+\newpage
+\input{top-risks/top-risks.tex}
+\newpage
+\input{recommendations/recommendations.tex}
+\end{document}
