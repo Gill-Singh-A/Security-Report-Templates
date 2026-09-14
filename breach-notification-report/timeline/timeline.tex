@@ -1,0 +1,26 @@
+\section{Incident Timeline}
+\begin{center}
+\begin{tikzpicture}[
+  mstep/.style={rectangle, rounded corners=4pt, fill=PrimaryMid, text=white,
+    font=\small\sffamily\bfseries, minimum width=13.2cm, minimum height=0.76cm, align=center},
+  mredstep/.style={rectangle, rounded corners=4pt, fill=AccentRed, text=white,
+    font=\small\sffamily\bfseries, minimum width=13.2cm, minimum height=0.76cm, align=center},
+  marrow/.style={->, thick, color=PrimaryMid, line width=1.2pt}
+]
+\node[mredstep] (t1) {\fillme{YYYY-MM-DD} \quad Unauthorised access begins (estimated)};
+\node[mstep, below=0.42cm of t1] (t2) {\fillme{YYYY-MM-DD} \quad Incident discovered};
+\node[mstep, below=0.42cm of t2] (t3) {\fillme{YYYY-MM-DD} \quad Incident response team engaged; containment begins};
+\node[mstep, below=0.42cm of t3] (t4) {\fillme{YYYY-MM-DD} \quad Containment confirmed};
+\node[mstep, below=0.42cm of t4] (t5) {\fillme{YYYY-MM-DD} \quad Forensic investigation concluded};
+\draw[marrow] (t1)--(t2); \draw[marrow] (t2)--(t3); \draw[marrow] (t3)--(t4); \draw[marrow] (t4)--(t5);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Detailed Log}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule\rowcolor{TableHead}\textcolor{white}{\bfseries Date} & \textcolor{white}{\bfseries Event} \\
+\midrule
+\fillme{YYYY-MM-DD} & \fillme{event description} \\
+\rowcolor{TableAlt}
+\fillme{YYYY-MM-DD} & \fillme{event description} \\
+\bottomrule\end{tabularx}\end{center}

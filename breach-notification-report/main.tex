@@ -1,0 +1,30 @@
+% ============================================================
+%  Data Breach Notification Report — template
+%  Modular LaTeX project: each report element lives in its own
+%  subdirectory.
+%
+%  Build:  pdflatex main.tex  (run twice for the table of contents)
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+\input{preamble/preamble.tex}
+
+\begin{document}
+\sffamily
+\input{cover/cover.tex}
+\newpage
+\thispagestyle{fancy}
+\renewcommand{\contentsname}{\color{PrimaryDark} Table of Contents}
+{\hypersetup{linkcolor=PrimaryDark}\tableofcontents}
+\newpage
+\input{incident-summary/incident-summary.tex}
+\newpage
+\input{timeline/timeline.tex}
+\newpage
+\input{data-impact-assessment/data-impact-assessment.tex}
+\newpage
+\input{regulatory-notifications/regulatory-notifications.tex}
+\newpage
+\input{remediation-actions/remediation-actions.tex}
+\newpage
+\input{appendix/appendix.tex}
+\end{document}
