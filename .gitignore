@@ -1,0 +1,26 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# Compiled output (kept out of version control; build locally with make/build.sh/pdflatex)
+*.pdf
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+*.swp
