@@ -1,0 +1,35 @@
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[PrimaryDark] (current page.north west) rectangle ([yshift=-9cm]current page.north east);
+  \fill[AccentRed] ([yshift=-9cm]current page.north west) rectangle ([yshift=-9.35cm]current page.north east);
+  \fill[LightGray] (current page.south west) rectangle ([yshift=3.2cm]current page.south east);
+  \fill[PrimaryMid] ([yshift=3.2cm]current page.south west) rectangle ([yshift=3.5cm]current page.south east);
+\end{tikzpicture}
+{\color{white}
+  \hspace{2.5cm}\begin{minipage}{12.6cm}
+    {\fontsize{9}{11}\selectfont\color{MedGray}\bfseries CONFIDENTIAL SECURITY DOCUMENT}\\[0.5cm]
+    {\fontsize{28}{32}\selectfont\bfseries Red Team\\[2pt]Assessment Report}\\[0.5cm]
+    {\fontsize{15}{19}\selectfont \reporttarget}\\[0.3cm]
+    {\fontsize{13}{16}\selectfont\color{MedGray}\ttfamily Adversary simulation --- goal-oriented, stealth-focused}
+  \end{minipage}}
+\par\vspace{4cm}
+\hspace{2.5cm}\begin{minipage}{12.6cm}\renewcommand{\arraystretch}{1.0}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.2cm}@{\hspace{0.4cm}}>{\raggedright\arraybackslash}p{7.4cm}@{}}
+    {\color{MedGray}\small\bfseries Document Type}   & \vspace{0cm} \small Red team / adversary simulation engagement report \\[6pt]
+    {\color{MedGray}\small\bfseries Objective(s)}     & \vspace{0cm} \small \fillme{e.g. obtain Domain Admin; exfiltrate a marked file from Finance} \\[6pt]
+    {\color{MedGray}\small\bfseries Engagement Window} & \vspace{0cm} \small \fillme{start} -- \fillme{end} \\[6pt]
+    {\color{MedGray}\small\bfseries Assessment Date} & \vspace{0cm} \small \reportdate \\[6pt]
+    {\color{MedGray}\small\bfseries Outcome}         & \vspace{0cm} \small \objectiveachieved \\[6pt]
+    {\color{MedGray}\small\bfseries Classification}  & \vspace{0cm} \small \textbf{Confidential --- Restricted Distribution} \\
+  \end{tabular}
+\end{minipage}
+\vfill
+\hspace{2.5cm}\begin{minipage}{12.6cm}\color{TextMain}\small
+  \textbf{Distribution:} This document contains sensitive security information --- including
+  attack techniques and detection gaps --- and must not be shared outside authorised personnel.\\[6pt]
+  \textbf{Scope of analysis:} \fillme{One or two sentences on the rules of engagement, e.g.
+  "a covert, objective-based simulation with no advance notice to the blue team; scope excluded
+  destructive actions and any production payment system."}
+\end{minipage}
+\vspace{1.0cm}
+\end{titlepage}

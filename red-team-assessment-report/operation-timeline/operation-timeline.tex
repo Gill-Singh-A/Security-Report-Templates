@@ -1,0 +1,28 @@
+\section{Operation Timeline}
+\begin{center}
+\begin{tikzpicture}[
+  mstep/.style={rectangle, rounded corners=4pt, fill=PrimaryMid, text=white,
+    font=\small\sffamily\bfseries, minimum width=13.2cm, minimum height=0.76cm, align=center},
+  mredstep/.style={rectangle, rounded corners=4pt, fill=AccentRed, text=white,
+    font=\small\sffamily\bfseries, minimum width=13.2cm, minimum height=0.76cm, align=center},
+  marrow/.style={->, thick, color=PrimaryMid, line width=1.2pt}
+]
+\node[mstep] (t1) {Day 1 \quad \fillme{Initial access -- e.g. spear-phishing email delivered}};
+\node[mstep, below=0.42cm of t1] (t2) {Day 2 \quad \fillme{Foothold established -- C2 beacon live}};
+\node[mstep, below=0.42cm of t2] (t3) {Day 3--4 \quad \fillme{Internal recon \& lateral movement}};
+\node[mstep, below=0.42cm of t3] (t4) {Day 5 \quad \fillme{Privilege escalation}};
+\node[mredstep, below=0.42cm of t4] (t5) {Day 6 \quad \fillme{Objective achieved}};
+\draw[marrow] (t1)--(t2); \draw[marrow] (t2)--(t3); \draw[marrow] (t3)--(t4); \draw[marrow] (t4)--(t5);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Detailed Log}
+\begin{center}\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule\rowcolor{TableHead}
+\textcolor{white}{\bfseries Timestamp} & \textcolor{white}{\bfseries Phase} & \textcolor{white}{\bfseries Action} \\
+\midrule
+\fillme{YYYY-MM-DD HH:MM} & Initial Access & \fillme{action taken} \\
+\rowcolor{TableAlt}
+\fillme{YYYY-MM-DD HH:MM} & C2 \& Persistence & \fillme{action taken} \\
+\fillme{YYYY-MM-DD HH:MM} & Lateral Movement & \fillme{action taken} \\
+\bottomrule\end{tabularx}\end{center}
