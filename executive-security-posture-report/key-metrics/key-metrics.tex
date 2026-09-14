@@ -5,11 +5,11 @@ findings on schedule."}
 
 \begin{center}
 \begin{tikzpicture}[
-  tile/.style={rectangle, rounded corners=4pt, fill=PrimaryMid, text=white, minimum width=4.1cm, minimum height=2.4cm, align=center}
+  tile/.style={rectangle, rounded corners=4pt, fill=PrimaryMid, text=white, minimum width=4.3cm, minimum height=2.6cm, text width=3.9cm, align=center, inner sep=6pt}
 ]
-\node[tile] (a) at (0,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N}} \\[2pt] {\small\sffamily \fillme{Open Critical/High findings}}\end{tabular}};
-\node[tile, fill=AccentGreen] (b) at (4.5,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N\%}} \\[2pt] {\small\sffamily \fillme{Findings remediated on time}}\end{tabular}};
-\node[tile, fill=AccentOrange] (c) at (9,0) {\begin{tabular}{c}{\Large\bfseries\sffamily \fillme{N}} \\[2pt] {\small\sffamily \fillme{Assessments completed this period}}\end{tabular}};
+\node[tile] (a) at (0,0) {{\Large\bfseries\sffamily [FILL: N]} \\[4pt] {\small\sffamily [FILL: Open Critical/High findings]}};
+\node[tile, fill=AccentGreen] (b) at (4.6,0) {{\Large\bfseries\sffamily [FILL: N\%]} \\[4pt] {\small\sffamily [FILL: Findings remediated on time]}};
+\node[tile, fill=AccentOrange] (c) at (9.2,0) {{\Large\bfseries\sffamily [FILL: N]} \\[4pt] {\small\sffamily [FILL: Assessments completed this period]}};
 \end{tikzpicture}
 \end{center}
 
