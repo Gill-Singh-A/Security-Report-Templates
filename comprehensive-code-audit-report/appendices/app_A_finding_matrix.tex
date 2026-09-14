@@ -1,0 +1,28 @@
+%% ============================================================
+%%  Appendix A — Complete Finding Matrix
+%% ============================================================
+\chapter{Complete Finding Matrix}
+\label{app:matrix}
+
+All findings listed with ID, severity, confidence, category, and a brief title. Cross-references
+link to the detailed finding sections.
+
+\begin{landscape}
+\begin{longtable}{lllp{4cm}p{8cm}}
+  \toprule
+  \textbf{ID} & \textbf{Severity} & \textbf{Confidence} & \textbf{Category} & \textbf{Title} \\
+  \midrule
+  \endhead
+  \multicolumn{5}{r}{\small\itshape Continued on next page} \\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+
+  \fref{sec:F-001} & \tabCrit & Confirmed & Injection & \fillme{Title} \\
+  \fref{sec:F-002} & \tabMed  & Suspected & Injection & \fillme{Title} \\
+  \fref{sec:F-010} & \tabHigh & Confirmed & Broken Access Control & \fillme{Title} \\
+  \fref{sec:F-011} & \tabLow  & Confirmed & Broken Access Control & \fillme{Title} \\
+  \fref{sec:F-020} & \tabMed  & Confirmed & Cross-Site Scripting & \fillme{Title} \\
+  \fref{sec:F-030} & \tabCrit & Confirmed & Vulnerable Dependencies & \fillme{Title} \\
+\end{longtable}
+\end{landscape}

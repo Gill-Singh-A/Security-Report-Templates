@@ -1,0 +1,67 @@
+%% ============================================================
+%%  Chapter 1 — Executive Summary
+%% ============================================================
+\chapter{Executive Summary}
+\label{ch:executive_summary}
+
+\begin{warningbox}
+  \fillme{One or two sentences stating what this report does and does not cover -- e.g. "this
+  report identifies vulnerabilities only; no fixes were applied and no remediation changes were
+  made to the codebase."}
+\end{warningbox}
+
+\vspace{0.5em}
+\fillme{One paragraph summarising the overall posture: the categories of weakness found, and the
+worst realistic outcome an unauthenticated or low-privilege attacker could achieve.}
+
+%% ----- Severity tally -------------------------------------------------------
+\section{Severity Tally}
+\label{sec:severity_tally}
+
+The assessment produced \textbf{\fillme{N} findings} (\fillme{F-001 through F-0NN}) across
+\fillme{n} review passes.
+
+\begin{table}[h!]
+  \centering
+  \caption{Finding count by severity}
+  \label{tab:severity_tally}
+  \begin{tabularx}{0.75\linewidth}{Xcc}
+    \toprule
+    \textbf{Severity} & \textbf{Count} & \textbf{Finding IDs} \\
+    \midrule
+    \rowcolor{sevCritical!15} Critical & \fillme{n} & \fillme{F-001, F-002, ...} \\
+    \rowcolor{sevHigh!15} High & \fillme{n} & \fillme{F-003, ...} \\
+    \rowcolor{sevMedium!15} Medium & \fillme{n} & \fillme{F-004, ...} \\
+    \rowcolor{sevLow!15} Low / Info & \fillme{n} & \fillme{F-005, ...} \\
+    \midrule
+    \textbf{Total} & \textbf{\fillme{N}} & \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+%% ----- Top risks ------------------------------------------------------------
+\section{Top Risks --- Fix First}
+\label{sec:top_risks}
+
+\fillme{One sentence introducing the list below.}
+
+\begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}]
+  \item \fillme{Headline risk cluster 1} (\Critical\ --- \S\ref{ch:example_category_one}, \fref{sec:F-001}).
+  \item \fillme{Headline risk cluster 2} (\High\ --- \S\ref{ch:example_category_two}, \fref{sec:F-010}).
+  \item \fillme{Headline risk cluster 3} (\Critical/\High\ --- \S\ref{ch:dependencies}).
+\end{enumerate}
+
+%% ----- Review structure -------------------------------------------------------
+\section{Report Structure}
+\label{sec:report_structure}
+
+\begin{description}[leftmargin=2cm, style=nextline]
+  \item[Part I (\S\S\ref{ch:example_category_one}--\ref{ch:dependencies})]
+    Finding-by-finding write-up with descriptions, Proofs of Concept (illustrative), impacts,
+    and mitigations, organized by vulnerability category.
+  \item[Part II (\S\ref{ch:remediation})]
+    Prioritized remediation roadmap (P0 immediate / P1 short-term / P2 hardening).
+  \item[Appendix A] Complete finding matrix with ID, severity, confidence, and category.
+  \item[Appendix B] Evidence file-and-class index mapping each category to its key source locations.
+  \item[Appendix C] Runtime verification checklist for authorized testers to confirm/deny each finding.
+\end{description}

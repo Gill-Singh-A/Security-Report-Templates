@@ -1,0 +1,41 @@
+%% ============================================================
+%%  Chapter 6 — Vulnerable Dependencies
+%%  Findings: F-030 to F-03N
+%% ============================================================
+\chapter{Vulnerable Dependencies}
+\label{ch:dependencies}
+
+\fillme{One paragraph on the overall dependency posture -- e.g. how out of date the stack is and
+whether any end-of-life libraries carry known RCE CVEs.}
+
+\begin{table}[h!]
+  \centering
+  \caption{End-of-life / vulnerable libraries identified}
+  \label{tab:deps}
+  \begin{tabularx}{\linewidth}{lccX}
+    \toprule
+    \textbf{Library} & \textbf{Version found} & \textbf{Severity} & \textbf{Known issue} \\
+    \midrule
+    \fillme{library-name} & \fillme{x.y.z} & \tabCrit & \fillme{CVE-YYYY-NNNNN -- one-line description} \\
+    \fillme{library-name} & \fillme{x.y.z} & \tabHigh & \fillme{CVE-YYYY-NNNNN -- one-line description} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{F-030 --- \fillme{Short finding title, e.g. "End-of-Life Framework Version with Known RCE"}}
+\label{sec:F-030}
+
+\begin{findingcritical}{F-030}{\fillme{Short finding title}}
+  \findmeta{Severity}{\Critical} \findmeta{Confidence}{\Confirmed}
+
+  \bigskip
+  \findsection{Location} \fillme{dependency manifest path / bundled jar}
+
+  \findsection{Description}
+  \fillme{Name the library, the version found, and the known CVE(s) affecting that version.}
+
+  \findsection{Impact} \fillme{What the CVE allows (e.g. unauthenticated RCE).}
+
+  \findsection{Remediation} \fillme{Upgrade to the fixed version; note any breaking changes to
+  plan for.}
+\end{findingcritical}

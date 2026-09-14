@@ -1,0 +1,65 @@
+%% ============================================================
+%%  Chapter 2 — Scope and Methodology
+%% ============================================================
+\chapter{Scope and Methodology}
+\label{ch:scope}
+
+\section{Review Scope}
+
+\begin{description}[leftmargin=3cm, style=nextline]
+  \item[In scope]
+    \fillme{Enumerate what was reviewed -- e.g. source tree, compiled bytecode, config files,
+    dependency manifests -- with rough size (file/class counts) if useful context.}
+    \begin{itemize}
+      \item \fillme{e.g. Views / templates (~N files)}
+      \item \fillme{e.g. Web/security XML or annotation-based configuration}
+      \item \fillme{e.g. Properties / environment configuration files}
+      \item \fillme{e.g. Compiled classes, analyzed via bytecode disassembly (source was absent)}
+    \end{itemize}
+
+  \item[Out of scope]
+    \fillme{e.g. Dynamic testing; running the application; network calls; binary data files.
+    No code was modified.}
+
+  \item[Context path]
+    \fillme{\url{https://example.com/app} (used in illustrative PoCs only -- not executed).}
+\end{description}
+
+\section{Methodology}
+
+The assessment followed a static, read-only white-box approach:
+
+\begin{enumerate}
+  \item \textbf{Configuration analysis} --- \fillme{web/security config, properties files, ORM
+    mapping config.}
+  \item \textbf{Secret scanning} --- all configuration and selected constant pools scanned for
+    credentials, keys, and tokens.
+  \item \textbf{Authorization model analysis} --- \fillme{the framework's auth filter chain and
+    any public-endpoint allowlist.}
+  \item \textbf{Input/output handling analysis} --- \fillme{templates/views scanned for unescaped
+    output, raw query construction.}
+  \item \textbf{Bytecode / binary analysis} --- \fillme{if source was unavailable, note the
+    disassembly tool used and what was searched for (injection sinks, crypto primitives, PRNG use).}
+  \item \textbf{Dependency audit} --- library version fingerprinting against known CVE databases.
+\end{enumerate}
+
+\section{Confidence Levels}
+
+Each finding is assigned one of two confidence levels:
+
+\begin{description}[leftmargin=3cm]
+  \item[\Confirmed] Direct evidence quoted from source or bytecode --- the vulnerability exists
+    as described.
+  \item[\Suspected] The mechanism is present but the full taint path or runtime-derived data
+    could not be verified statically. These require dynamic confirmation (see
+    Appendix~\ref{app:runtime}).
+\end{description}
+
+\section{Limitations}
+
+\begin{itemize}
+  \item \fillme{Note any part of the codebase that could not be verified statically (e.g. runtime
+    DB-driven authorization tables, dynamic includes).}
+  \item \fillme{Note any deployment/config-dependent finding whose real-world severity depends on
+    something only knowable on the live server (see Appendix~\ref{app:runtime}).}
+\end{itemize}

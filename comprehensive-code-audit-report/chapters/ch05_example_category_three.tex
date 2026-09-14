@@ -1,0 +1,32 @@
+%% ============================================================
+%%  Chapter 5 — Cross-Site Scripting (example category)
+%%  Findings: F-020 to F-02N
+%% ============================================================
+\chapter{Cross-Site Scripting}
+\label{ch:example_category_three}
+
+\section{F-020 --- \fillme{Short, specific finding title}}
+\label{sec:F-020}
+
+\begin{findingmedium}{F-020}{\fillme{Short, specific finding title}}
+  \findmeta{Severity}{\Medium} \findmeta{Confidence}{\Confirmed}
+
+  \bigskip
+  \findsection{Location}
+  \cls{\fillme{template/view/path}}; endpoint \ep{\fillme{METHOD /path}}.
+
+  \findsection{Description}
+  \fillme{Explain which output is rendered without encoding, and under what condition an
+  attacker controls it (reflected/stored).}
+
+  \begin{lstlisting}[style=xml, caption={\fillme{Illustrative unescaped output}}]
+\fillme{<!-- minimal illustrative template snippet, not the real file contents -->}
+  \end{lstlisting}
+
+  \findsection{Impact}
+  \fillme{Session/token theft, UI redress, or other consequence in this application's context.}
+
+  \findsection{Remediation}
+  \fillme{e.g. output-encode by default in the templating engine; add a strict CSP without
+  unsafe-inline.}
+\end{findingmedium}

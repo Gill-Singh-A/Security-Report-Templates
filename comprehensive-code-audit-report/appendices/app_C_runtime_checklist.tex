@@ -1,0 +1,43 @@
+%% ============================================================
+%%  Appendix C — Runtime Verification Checklist
+%% ============================================================
+\chapter{Runtime Verification Checklist}
+\label{app:runtime}
+
+\begin{warningbox}
+  \textbf{This checklist was produced by static analysis only. None of these steps were
+  executed.} They are instructions for authorized testers. Run only with written authorization
+  from the application/asset owner, against a \textbf{staging / non-production} instance that
+  mirrors production configuration. See the ground rules below before proceeding.
+\end{warningbox}
+
+\section{Ground Rules (Read First)}
+\label{sec:rt_ground_rules}
+
+\begin{itemize}
+  \item[\(\square\)] \textbf{Authorization:} Obtain written authorization before running any test.
+  \item[\(\square\)] \textbf{Environment:} Use a staging / non-production instance. Do
+    \textbf{not} run injection, deserialization, payment, or upload exploits against production.
+  \item[\(\square\)] \textbf{Backups:} Snapshot the database and filesystem before destructive
+    tests.
+  \item[\(\square\)] \textbf{No live gadget payloads:} for any deserialization/RCE test, use a
+    benign callback-only payload against an isolated collaborator host -- never an RCE command
+    payload on a shared or production system.
+  \item[\(\square\)] \textbf{Rotate first:} any secret found in this report must be assumed
+    compromised. Rotate it before these tests, then verify the application still functions.
+  \item[\(\square\)] \textbf{Notify SOC/ops:} tests will generate alerts and log entries.
+  \item[\(\square\)] \textbf{Placeholders:} \texttt{BASE=https://staging-host/app};
+    \texttt{COOKIE} = an authenticated session cookie where noted.
+\end{itemize}
+
+\section{1 --- Deployment and Configuration (Non-exploit, Server Read-only)}
+\begin{itemize}
+  \item[\(\square\)] \fillme{e.g. Confirm whether upload directories are web-served (affects F-0NN severity).}
+  \item[\(\square\)] \fillme{e.g. Confirm whether a static IV is used in every cryptographic call path.}
+\end{itemize}
+
+\section{2 --- Finding-by-Finding Confirmation}
+\begin{itemize}
+  \item[\(\square\)] \fref{sec:F-001} --- \fillme{one-line confirmation step}
+  \item[\(\square\)] \fref{sec:F-023} --- \fillme{one-line confirmation step}
+\end{itemize}

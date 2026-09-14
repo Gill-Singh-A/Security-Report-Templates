@@ -1,0 +1,87 @@
+%% ============================================================
+%%  main.tex — Comprehensive Code Audit Report template
+%%
+%%  Compile with: pdflatex -> pdflatex (twice for cross-refs)
+%%  or: make (see Makefile)
+%% ============================================================
+
+\documentclass[12pt, a4paper, oneside]{report}
+
+\input{preamble}
+
+%% ============================================================
+\begin{document}
+
+%% ---- Title page ----------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+
+  {\Huge\bfseries\color{titlegrey} \reportsystem\\[0.4em]
+   Security Assessment Report}
+
+  \vspace{1.5cm}
+  \rule{\linewidth}{1.5pt}
+  \vspace{0.5cm}
+
+  {\large
+    \begin{tabular}{ll}
+      \textbf{Target application:} & \reportsystem \\[4pt]
+      \textbf{Artifact path:}       & \fillme{path or repo reference} \\[4pt]
+      \textbf{Technology stack:}    & \fillme{e.g. Java/Spring MVC, MyBatis, Tomcat} \\[4pt]
+      \textbf{Review date:}         & \reportdate \\[4pt]
+      \textbf{Review type:}         & Static / read-only white-box (source + bytecode) \\[4pt]
+      \textbf{Total findings:}      & \fillme{N (n Critical, n High, n Medium, n Low/Info)} \\[4pt]
+      \textbf{Classification:}      & \textcolor{sevCritical}{\textbf{CONFIDENTIAL}} \\
+    \end{tabular}
+  }
+
+  \vspace{0.5cm}
+  \rule{\linewidth}{1.5pt}
+  \vspace{1.5cm}
+
+  \begin{warningbox}
+    \textbf{Confidentiality notice:} \fillme{State plainly if this report contains real
+    production secrets found verbatim in the artifact -- if so, treat this document as strictly
+    confidential and rotate every credential listed immediately. All Proof-of-Concept requests
+    are illustrative only unless stated otherwise.}
+  \end{warningbox}
+
+  \vfill
+  {\small\textcolor{rulegrey}{\fillme{State the review constraints, e.g. "Static analysis only --
+  no code modified, no network requests made, no application executed."}}}
+\end{titlepage}
+
+%% ---- Table of contents ---------------------------------------------
+\tableofcontents
+\newpage
+
+%% --------------------------------------------------------------------
+%%  PART I — MAIN REPORT
+%% --------------------------------------------------------------------
+\part{Security Assessment}
+
+\input{chapters/ch01_executive_summary}
+\input{chapters/ch02_scope_methodology}
+\input{chapters/ch03_example_category_one}
+\input{chapters/ch04_example_category_two}
+\input{chapters/ch05_example_category_three}
+\input{chapters/ch06_dependencies}
+
+%% --------------------------------------------------------------------
+%%  PART II — REMEDIATION & VERIFICATION
+%% --------------------------------------------------------------------
+\part{Remediation and Verification}
+
+\input{chapters/ch07_remediation_roadmap}
+
+%% --------------------------------------------------------------------
+%%  APPENDICES
+%% --------------------------------------------------------------------
+\appendix
+
+\input{appendices/app_A_finding_matrix}
+\input{appendices/app_B_evidence_index}
+\input{appendices/app_C_runtime_checklist}
+
+\end{document}

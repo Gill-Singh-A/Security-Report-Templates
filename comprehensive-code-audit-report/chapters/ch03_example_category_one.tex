@@ -1,0 +1,66 @@
+%% ============================================================
+%%  Chapter 3 — Injection (example category)
+%%  Findings: F-001 to F-00N
+%%
+%%  Rename this file/chapter to whatever vulnerability category
+%%  applies (e.g. "Authentication", "Authorization", "Secrets \&
+%%  Credentials"), and copy the F-001 block below once per finding.
+%% ============================================================
+\chapter{Injection}
+\label{ch:example_category_one}
+
+\begin{warningbox}
+  \textbf{Systemic context:} \fillme{If this category has a systemic root cause -- e.g. a shared
+  data-access helper that never parameterises input -- describe it here once, so each finding
+  below can just reference it instead of repeating the explanation.}
+\end{warningbox}
+
+% ---- F-001 ------------------------------------------------------------------
+\section{F-001 --- \fillme{Short, specific finding title}}
+\label{sec:F-001}
+
+\begin{findingcritical}{F-001}{\fillme{Short, specific finding title}}
+  \findmeta{Severity}{\Critical} \findmeta{Confidence}{\Confirmed}
+
+  \bigskip
+  \findsection{Location}
+  \cls{\fillme{package/Class.java}}; reachable from \fillme{endpoint(s) or entry point(s)}.
+
+  \findsection{Description}
+  \fillme{Explain, in plain language, what untrusted input reaches the vulnerable sink and why
+  it is not safely handled.}
+
+  \begin{lstlisting}[style=sql, caption={\fillme{Illustrative injectable query -- no real schema/data}}]
+\fillme{-- minimal illustrative SQL showing the pattern, not real table/column names}
+  \end{lstlisting}
+
+  \findsection{Proof of Concept (illustrative --- not executed)}
+  \begin{lstlisting}[style=http, caption={\fillme{PoC title}}]
+\fillme{# illustrative request only -- no real hostnames, tokens, or credentials}
+  \end{lstlisting}
+
+  \findsection{Impact}
+  \fillme{One or two sentences: what an attacker can concretely do as a result.}
+
+  \findsection{Remediation}
+  \fillme{The specific fix, e.g. "use parameterised queries / bind variables everywhere this
+  pattern occurs."}
+\end{findingcritical}
+
+% ---- F-002 (medium-severity example) ----------------------------------------
+\section{F-002 --- \fillme{Second finding title in this category}}
+\label{sec:F-002}
+
+\begin{findingmedium}{F-002}{\fillme{Second finding title}}
+  \findmeta{Severity}{\Medium} \findmeta{Confidence}{\Suspected}
+
+  \bigskip
+  \findsection{Location} \cls{\fillme{package/Class.java}}
+
+  \findsection{Description}
+  \fillme{Describe the weaker/partial version of the same issue class.}
+
+  \findsection{Impact} \fillme{...}
+
+  \findsection{Remediation} \fillme{...}
+\end{findingmedium}

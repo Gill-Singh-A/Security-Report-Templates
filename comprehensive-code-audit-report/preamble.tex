@@ -1,0 +1,298 @@
+%% ============================================================
+%%  preamble.tex — Packages, macros, and styling
+%%  Comprehensive Code Audit Report template.
+%%  Edit the placeholders marked <EDIT> below, then leave the
+%%  rest of this file alone.
+%% ============================================================
+
+%% ----- Report-wide placeholders ------------------------------------------
+% <EDIT> Set these once, at the very top (they're used by \hypersetup below,
+% which expands them immediately, so they must be defined before that point).
+\newcommand{\reportsystem}{Example Application}
+\newcommand{\reportdate}{2030-01-01}
+
+%% ----- Encoding & fonts -------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amssymb}
+\usepackage{textcomp}
+
+%% ----- Page geometry ----------------------------------------------------------
+\usepackage[a4paper, top=3.2cm, bottom=3cm, left=2.8cm, right=2.8cm, headheight=14pt]{geometry}
+
+%% ----- Graphics ---------------------------------------------------------------
+\usepackage{graphicx}
+
+%% ----- Colour definitions -----------------------------------------------------
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+
+\definecolor{sevCritical}{RGB}{180,0,0}
+\definecolor{sevHigh}{RGB}{200,80,0}
+\definecolor{sevMedium}{RGB}{170,120,0}
+\definecolor{sevLow}{RGB}{30,130,30}
+\definecolor{sevInfo}{RGB}{50,80,160}
+\definecolor{bgCritical}{RGB}{255,240,240}
+\definecolor{bgHigh}{RGB}{255,245,235}
+\definecolor{bgMedium}{RGB}{255,252,220}
+\definecolor{bgLow}{RGB}{240,255,240}
+\definecolor{bgInfo}{RGB}{235,240,255}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{rulegrey}{RGB}{120,120,120}
+\definecolor{titlegrey}{RGB}{50,50,70}
+\definecolor{linkblue}{RGB}{0,70,150}
+
+%% ----- Hyperlinks -------------------------------------------------------------
+% <EDIT> Replace the pdftitle/pdfauthor/pdfsubject below.
+\usepackage[
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  citecolor=linkblue,
+  bookmarks=true,
+  bookmarksnumbered=true,
+  pdftitle={\reportsystem\ Security Assessment Report},
+  pdfauthor={Static Security Review --- \reportdate},
+  pdfsubject={White-box Security Assessment},
+]{hyperref}
+\usepackage{url}
+\urlstyle{tt}
+
+%% ----- Tables ----------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{colortbl}
+\renewcommand{\arraystretch}{1.35}
+
+%% ----- Lists -----------------------------------------------------------------
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=4pt, leftmargin=1.8em}
+\setlist[enumerate]{noitemsep, topsep=4pt, leftmargin=2em}
+
+%% ----- Paragraph spacing -----------------------------------------------------
+\usepackage[parfill]{parskip}
+\setlength{\parindent}{0pt}
+
+%% ----- Code listings ---------------------------------------------------------
+\usepackage{listings}
+
+\lstdefinestyle{basestyle}{
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeframe},
+  basicstyle=\footnotesize\ttfamily,
+  breaklines=true,
+  breakatwhitespace=false,
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  numbers=none,
+  xleftmargin=6pt,
+  xrightmargin=6pt,
+  framexleftmargin=6pt,
+  framexrightmargin=6pt,
+  framesep=4pt,
+  extendedchars=true,
+  inputencoding=utf8,
+}
+
+\lstdefinestyle{java}{
+  style=basestyle,
+  language=Java,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  stringstyle=\color{ForestGreen},
+  commentstyle=\color{gray}\itshape,
+}
+
+\lstdefinestyle{xml}{
+  style=basestyle,
+  language=XML,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  stringstyle=\color{ForestGreen},
+  commentstyle=\color{gray}\itshape,
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+}
+
+\lstdefinestyle{sql}{
+  style=basestyle,
+  language=SQL,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  stringstyle=\color{ForestGreen},
+  commentstyle=\color{gray}\itshape,
+  morekeywords={UPDATE,INSERT,SELECT,FROM,WHERE,LIKE,UNION,HAVING,ORDER,BY,LIMIT,ASC,DESC,SET,AND,OR,NOT},
+}
+
+\lstdefinestyle{http}{
+  style=basestyle,
+  language={},
+  commentstyle=\color{gray}\itshape,
+  morecomment=[l]{\#},
+}
+
+\lstdefinestyle{bash}{
+  style=basestyle,
+  language=bash,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  stringstyle=\color{ForestGreen},
+  commentstyle=\color{gray}\itshape,
+}
+
+\lstdefinestyle{properties}{
+  style=basestyle,
+  language={},
+  morecomment=[l]{\#},
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{ForestGreen},
+}
+
+%% ----- TcolorBox for finding blocks ------------------------------------------
+\usepackage[most,skins,breakable,listings]{tcolorbox}
+
+%% Severity badge command
+\newcommand{\sevbadge}[2]{%
+  \colorbox{#1}{\color{white}\bfseries\footnotesize\strut\ #2\ }%
+}
+\newcommand{\Critical}{\sevbadge{sevCritical}{CRITICAL}}
+\newcommand{\High}{\sevbadge{sevHigh}{HIGH}}
+\newcommand{\Medium}{\sevbadge{sevMedium}{MEDIUM}}
+\newcommand{\Low}{\sevbadge{sevLow}{LOW}}
+\newcommand{\Info}{\sevbadge{sevInfo}{INFO}}
+
+\newcommand{\Confirmed}{\textcolor{ForestGreen}{\bfseries Confirmed}}
+\newcommand{\Suspected}{\textcolor{Goldenrod}{\bfseries Suspected}}
+
+%% Finding environments by severity
+\tcbset{
+  findingbase/.style={
+    breakable,
+    enhanced,
+    colback=white,
+    boxrule=1pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    attach boxed title to top left={yshift=-2mm, xshift=8pt},
+    boxed title style={
+      arc=2pt,
+      boxrule=0pt,
+      left=4pt, right=4pt,
+    },
+    fonttitle=\bfseries\small,
+    separator sign={\ —\ },
+  }
+}
+
+\newtcolorbox{findingcritical}[2]{
+  findingbase,
+  colframe=sevCritical,
+  colbacktitle=sevCritical,
+  coltitle=white,
+  title={#1 \textnormal{---} #2},
+}
+\newtcolorbox{findinghigh}[2]{
+  findingbase,
+  colframe=sevHigh,
+  colbacktitle=sevHigh,
+  coltitle=white,
+  title={#1 \textnormal{---} #2},
+}
+\newtcolorbox{findingmedium}[2]{
+  findingbase,
+  colframe=sevMedium,
+  colbacktitle=sevMedium,
+  coltitle=white,
+  title={#1 \textnormal{---} #2},
+}
+\newtcolorbox{findinglow}[2]{
+  findingbase,
+  colframe=sevLow,
+  colbacktitle=sevLow,
+  coltitle=white,
+  title={#1 \textnormal{---} #2},
+}
+\newtcolorbox{findinginfo}[2]{
+  findingbase,
+  colframe=sevInfo,
+  colbacktitle=sevInfo,
+  coltitle=white,
+  title={#1 \textnormal{---} #2},
+}
+
+%% Convenience macros inside finding boxes
+\newcommand{\findsection}[1]{\vspace{4pt}\textbf{\textit{#1:}}\quad}
+\newcommand{\findmeta}[2]{\textbf{#1:} #2\enspace}
+
+%% Note / warning box
+\newtcolorbox{warningbox}{
+  breakable,
+  colback=yellow!8!white,
+  colframe=Goldenrod!80,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  arc=2pt,
+  boxrule=0.8pt,
+}
+
+\newtcolorbox{notebox}{
+  breakable,
+  colback=blue!5!white,
+  colframe=linkblue!60,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  arc=2pt,
+  boxrule=0.8pt,
+}
+
+%% ----- Headers & footers -----------------------------------------------------
+% <EDIT> Replace the system name below.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{rulegrey}{\reportsystem\ --- Security Assessment}}
+\fancyhead[R]{\small\textcolor{rulegrey}{\leftmark}}
+\fancyfoot[C]{\small\textcolor{rulegrey}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%% ----- Chapter / section styling ---------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries\color{titlegrey}}
+  {\chaptertitlename\ \thechapter}{12pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{titlegrey}}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{titlegrey}}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{4pt}
+
+%% ----- Miscellaneous helpers -------------------------------------------------
+\usepackage{rotating}
+\usepackage{pdflscape}
+
+%% Inline code helper
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\cls}[1]{\texttt{#1}}
+\newcommand{\ep}[1]{\texttt{#1}}   %% endpoint
+\newcommand{\fref}[1]{\hyperref[#1]{\textbf{#1}}}  %% finding reference
+
+%% Severity in tables
+\newcommand{\tabCrit}{\cellcolor{sevCritical!20}\textcolor{sevCritical}{\bfseries Critical}}
+\newcommand{\tabHigh}{\cellcolor{sevHigh!20}\textcolor{sevHigh}{\bfseries High}}
+\newcommand{\tabMed}{\cellcolor{sevMedium!20}\textcolor{sevMedium}{\bfseries Medium}}
+\newcommand{\tabLow}{\cellcolor{sevLow!20}\textcolor{sevLow}{\bfseries Low}}
+\newcommand{\tabInfo}{\cellcolor{sevInfo!20}\textcolor{sevInfo}{\bfseries Info}}
+
+%% Placeholder marker -- wrap text that needs to be filled in manually
+\newcommand{\fillme}[1]{\colorbox{yellow!40}{\ttfamily\bfseries\small [ FILL: #1 ]}}

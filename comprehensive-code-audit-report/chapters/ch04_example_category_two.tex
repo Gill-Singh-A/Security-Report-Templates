@@ -1,0 +1,45 @@
+%% ============================================================
+%%  Chapter 4 — Broken Access Control (example category)
+%%  Findings: F-010 to F-01N
+%% ============================================================
+\chapter{Broken Access Control}
+\label{ch:example_category_two}
+
+% ---- F-010 (high-severity example) -------------------------------------------
+\section{F-010 --- \fillme{Short, specific finding title}}
+\label{sec:F-010}
+
+\begin{findinghigh}{F-010}{\fillme{Short, specific finding title}}
+  \findmeta{Severity}{\High} \findmeta{Confidence}{\Confirmed}
+
+  \bigskip
+  \findsection{Location}
+  \cls{\fillme{package/Class.java}}; endpoint \ep{\fillme{METHOD /path}}.
+
+  \findsection{Description}
+  \fillme{Explain what authorization check is missing or bypassable, and how an object
+  identifier is trusted from the request without an ownership check.}
+
+  \findsection{Proof of Concept (illustrative --- not executed)}
+  \begin{lstlisting}[style=http, caption={\fillme{PoC title}}]
+\fillme{# illustrative request only}
+  \end{lstlisting}
+
+  \findsection{Impact}
+  \fillme{What data/records an attacker can read or modify that they should not be able to.}
+
+  \findsection{Remediation}
+  \fillme{e.g. add a per-object ownership check; enforce a default-deny authorization filter.}
+\end{findinghigh}
+
+% ---- F-011 (low-severity example) --------------------------------------------
+\section{F-011 --- \fillme{Third finding title in this category}}
+\label{sec:F-011}
+
+\begin{findinglow}{F-011}{\fillme{Third finding title}}
+  \findmeta{Severity}{\Low} \findmeta{Confidence}{\Confirmed}
+
+  \bigskip
+  \findsection{Description} \fillme{A minor hygiene gap in the same category.}
+  \findsection{Remediation} \fillme{...}
+\end{findinglow}

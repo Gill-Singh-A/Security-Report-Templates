@@ -1,0 +1,49 @@
+%% ============================================================
+%%  Chapter 7 — Prioritized Remediation Roadmap
+%% ============================================================
+\chapter{Prioritized Remediation Roadmap}
+\label{ch:remediation}
+
+This roadmap groups the findings into three priority tiers based on exploitability, attack
+complexity, authentication requirements, and business impact. The ordering within each tier
+follows the principle of \textit{fix the key that opens all the other doors first}.
+
+\begin{warningbox}
+  \textbf{Before starting any remediation:} \fillme{If any finding exposed a live credential,
+  say so here and cross-reference it -- rotation should happen before or alongside every other
+  fix, regardless of completion order.}
+\end{warningbox}
+
+% ============================================================================
+\section{P0 --- Fix Immediately (Unauthenticated, High Impact)}
+\label{sec:p0}
+% ============================================================================
+
+These findings are exploitable today by an unauthenticated attacker and carry Critical severity.
+
+\begin{enumerate}[leftmargin=*, label=\textbf{P0-\arabic*.}]
+  \item \textbf{\fillme{Action, e.g. "Rotate and externalize all secrets"}}
+    (\fref{sec:F-001}). \fillme{One-line detail.}
+  \item \textbf{\fillme{Action, e.g. "Fix unauthenticated SQL injection in ..."}}
+    (\fref{sec:F-023}). \fillme{One-line detail.}
+\end{enumerate}
+
+% ============================================================================
+\section{P1 --- Short-Term (Authenticated / Moderate Impact)}
+\label{sec:p1}
+% ============================================================================
+
+\begin{enumerate}[leftmargin=*, label=\textbf{P1-\arabic*.}]
+  \item \textbf{\fillme{Action}} (\fref{sec:F-010}). \fillme{One-line detail.}
+  \item \textbf{\fillme{Action}} (\fref{sec:F-020}). \fillme{One-line detail.}
+\end{enumerate}
+
+% ============================================================================
+\section{P2 --- Hardening}
+\label{sec:p2}
+% ============================================================================
+
+\begin{enumerate}[leftmargin=*, label=\textbf{P2-\arabic*.}]
+  \item \textbf{\fillme{Action, e.g. "Upgrade end-of-life dependencies"}} (\fref{sec:F-030}).
+  \item \textbf{\fillme{Action, e.g. "Add SAST/dependency scanning to CI"}}.
+\end{enumerate}
